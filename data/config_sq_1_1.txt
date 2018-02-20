@@ -4,7 +4,7 @@
 #		C-H Wu, K-C Lee, Y-C Chung
 
 
-#######
+# ######
 # For initial experiments, use their rectangular region
 
 # Shapes: one per line, first # = sides
