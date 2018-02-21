@@ -85,22 +85,28 @@ def line_eq(x1, y1, x2, y2):
 
 # Given the equation of a line segment with form y=mx+b between (x1,y1)
 #	and (x2,y2), calculate point on line that is dist away from (x1,y1)
-def pt_on_line(lineeq, dist, x1, y1, x2, y2):
+def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 	flag = 0
 	newcoords = [0.,0.]
+	print str(x1)+" "+str(y1)+" "+str(x2)+" "+str(y2)
+	print (xydist)
+	if xydist[1]<0 or xydist[2]<0:
+		optdist = -optdist
+
+
 	if lineeq[2] == 1: #horizontal
-		print "horizontal"+ str(x1)+ " "+ str(dist)
-		newcoords[0] = x1 + dist
-		if newcoords[0] > x2:
+		print "horizontal"+ str(x1)+ " "+ str(optdist)
+		newcoords[0] = x1 + optdist
+		if (optdist>0 and newcoords[0] > x2) or (optdist<0 and newcoords[0]<x2):
 			print " SET FLAG around corner x"
 			flag = 1
 			# TODO: this is the case that it bends around the corner,
 			# so find distances from center of potl sites 
 		newcoords[1] = y1
 	elif lineeq[2] == 2: # vertical
-		print "vertical "+ str(y1)+ " "+ str(dist)
-		newcoords[1] = y1 + dist
-		if newcoords[1] > y2:
+		print "vertical "+ str(y1)+ " "+ str(optdist)
+		newcoords[1] = y1 + optdist
+		if (optdist>0 and newcoords[1] > y2) or (optdist<0 and newcoords[1] < y2):
 		 	print " SET FLAG around corner y"
 		 	flag = 1
 		 	# TODO: this is the case that it bends around the corner,
@@ -109,7 +115,7 @@ def pt_on_line(lineeq, dist, x1, y1, x2, y2):
 	else: # sloped line
 		v = np.array([x2,y2]) - np.array([x1,y1])
 		u = v / np.linalg.norm(v)
-		newcoords = np.array([x1,y1]) + dist*u
+		newcoords = np.array([x1,y1]) + optdist*u
 
 	return newcoords, flag
 
@@ -145,10 +151,10 @@ def find_cand_points(poly, rad):
 			num_cand_sites = int(floor(dist[0]/optdist)) # num of cand sites on this segment
 			print num_cand_sites
 			line = line_eq(x1,y1,x2,y2)
-			#for i in range(0, num_cand_sites):
+			print line
 			f = 0 
 			while f == 0:
-				candpt, f  = pt_on_line(line, optdist,x1,y1,x2,y2)
+				candpt, f  = pt_on_line(line, dist, optdist,x1,y1,x2,y2)
 				if f == 0:
 					x1 = candpt[0]
 					y1 = candpt[1]
@@ -181,48 +187,6 @@ def find_cand_points(poly, rad):
 				print "poop"
 
 	return candpts
-
-
-
-
-## distance fig
-
-fig = pyplot.figure(1, dpi=90)
-
-ax = fig.add_subplot(111)
-
-targetArea = Polygon([(0,0),(0,400),(400,400),(400,0)],[[(101,74),(87,93),(99,119),(119,95)],[(200,70),(200,50),(300,20),(330,45),(370,45)]])
-print targetArea.area
-
-plot_coords(ax, targetArea.interiors[0])
-plot_coords(ax, targetArea.exterior)
-patch = PolygonPatch(targetArea, facecolor='#6699cc', edgecolor='#6699cc', alpha=0.1, zorder=2)
-ax.add_patch(patch)
-
-#pyplot.show()
-
-## buffer fig
-buffers = gen_dist_buffers(10.0, targetArea)
-plot_dist_buffers(ax, buffers)
-
-pts_buffer1 = find_cand_points(buffers[0],10.0)
-print pts_buffer1
-plot_coords_list(ax, pts_buffer1, color="#000000", zorder=3)
-
-# experiment with buffer polys
-#for i in range(0, len(buffers)):
-#	print "buffer "+str(i)
-#	if buffers[i].instanceof(shapely.geometry.polygon.MultiPolygon):
-#		for j in range(0, len(buffers[i])):
-#			print "linestring length "+str(j)+" "+buffers[i][j].length
-#	else:
-#		print "exterior length "+str(buffers[i].exterior.length)
-#		print "interior length "+" "+str(buffers[i].interiors[0].length)
-
-
-#show plot
-pyplot.show()
-
 
 
 
