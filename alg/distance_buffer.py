@@ -5,6 +5,10 @@ from shapely.geometry import LinearRing
 from shapely.geometry import LineString
 from shapely.geometry import Point
 
+import numpy as np
+
+from scipy.spatial.distance import euclidean
+
 from math import sqrt
 from math import floor
 from matplotlib import pyplot
@@ -14,7 +18,9 @@ from descartes.patch import PolygonPatch
 #from shapely.figures import BLUE, SIZE, set_limits, plot_coords, color_isvalid
   
 
-
+def plot_coords_list(ax, pts, dotsize=0.25, color="#999999", zorder=1, alpha=1):
+	temp = zip(*pts)
+	ax.scatter(temp[0], temp[1], dotsize, color=color, zorder=zorder, alpha=alpha)
 
 def plot_coords(ax, ob, color='#999999', zorder=1, alpha=1):
     x, y = ob.xy
@@ -27,9 +33,7 @@ def gen_dist_buffers(rad, area):
 	buffers = []
 	#i = 1
 	# est max num of buffers
-	# idea: targetArea area / area of (mult*rad) , sqrt result , divide by 2
-	# idk if this always works. this is for squares(?) ... vvv
-	#nb = int(floor(sqrt((targetArea.area/(mult*rad*mult*rad)))/2))
+	# 
 	#print nb 
 	for i in range(1,13):
 		buffers.append(temp)
@@ -41,8 +45,10 @@ def gen_dist_buffers(rad, area):
 def plot_dist_buffers(ax, buffers):
 	cnt = len(buffers)
 	print "num of buffers "+str(cnt-1)
-	print type(buffers)
-	print type(buffers[0])
+	#print type(buffers)
+	#print type(buffers[0].exterior)
+	#print type(buffers[0].interiors)
+	#print type(buffers[2])
 
 	for i in range(1, cnt):
 		buf = buffers[i]
@@ -57,30 +63,106 @@ def eucdist(x1,y1,x2,y2):
 	dist = sqrt(pow(xdist,2)+pow(ydist,2))
 	return [dist, xdist, ydist]
 	
+def line_eq(x1, y1, x2, y2):
+	m  = 0
+	b = 0
+	t = 0
+	try:
+		num = (float(y1)-y2)
+		if num == 0: # horizontal line
+			print "horizontal line y = "+str(y1)
+			t = 1 # horizontal == 1
+		else:
+			m = num/(float(x1)-x2)
+			b = y1 - m*x1
+			print ("y = "+str(m)+"*x + "+str(b))
+	except ZeroDivisionError: #vertical line
+		print "vertical line x = "+str(x1)
+		t = 2 # vertical == 2
 
-def find_cand_points(ring, rad):
+	return [m,b,t]
+
+
+# Given the equation of a line segment with form y=mx+b between (x1,y1)
+#	and (x2,y2), calculate point on line that is dist away from (x1,y1)
+def pt_on_line(lineeq, dist, x1, y1, x2, y2):
+	flag = 0
+	newcoords = [0.,0.]
+	if lineeq[2] == 1: #horizontal
+		print "horizontal"+ str(x1)+ " "+ str(dist)
+		newcoords[0] = x1 + dist
+		if newcoords[0] > x2:
+			print " SET FLAG around corner x"
+			flag = 1
+			# TODO: this is the case that it bends around the corner,
+			# so find distances from center of potl sites 
+		newcoords[1] = y1
+	elif lineeq[2] == 2: # vertical
+		print "vertical "+ str(y1)+ " "+ str(dist)
+		newcoords[1] = y1 + dist
+		if newcoords[1] > y2:
+		 	print " SET FLAG around corner y"
+		 	flag = 1
+		 	# TODO: this is the case that it bends around the corner,
+			# so find distances from center of potl sites 
+		newcoords[0] = x1
+	else: # sloped line
+		v = np.array([x2,y2]) - np.array([x1,y1])
+		u = v / np.linalg.norm(v)
+		newcoords = np.array([x1,y1]) + dist*u
+
+	return newcoords, flag
+
+def find_cand_points(poly, rad):
 	candpts = []
-	coords = list(ring.coords)
+	optdist = sqrt(3)*rad
+	# TODO : have to deal with interior and exterior rings
+	coords = list(poly.exterior.coords)
 	numcoords=len(coords)
 	cnt = 0
 	x1 = coords[cnt][0]
 	y1 = coords[cnt][1]
 	
 	while cnt < numcoords:
-
-		x2 = coords[cnt+1][0]
-		y2 = coords[cnt+1][1]
+		if cnt+1>=numcoords-1:
+			print "closing ring/polygon at cnt = "+str(cnt)
+			x2 = coords[0][0]	#loop back around to the first coord 
+			y2 = coords[0][1]
+			cnt = numcoords
+		else:
+			x2 = coords[cnt+1][0]
+			y2 = coords[cnt+1][1]
+			cnt+=1
 
 		# 1 - find length of current segment
 		dist = eucdist(x1,y1,x2,y2)
+		print str(dist)
+
 		# if its on the 1st segment we use this dist, on current segment
-		if dist[0] > sqrt(3)*rad:
-			newx = x1 + eucdist[1]
-			newy = y1 + eucdist[2]
-			#cnt +=1
-			candpts.append((newx,newy))
-			x1 = newx
-			y1 = newy
+		if dist[0] > optdist:
+			#l = polyfit([x1,y1],[x2,y2],1)
+			#print str(l)
+			num_cand_sites = int(floor(dist[0]/optdist)) # num of cand sites on this segment
+			print num_cand_sites
+			line = line_eq(x1,y1,x2,y2)
+			#for i in range(0, num_cand_sites):
+			f = 0 
+			while f == 0:
+				candpt, f  = pt_on_line(line, optdist,x1,y1,x2,y2)
+				if f == 0:
+					x1 = candpt[0]
+					y1 = candpt[1]
+					#cnt +=1
+					candpts.append((x1,y1))
+					print str(candpt)
+					#x1 = newx
+					#y1 = newy
+				else:
+					#TODO: handle corner calculations
+					print "FLAG bends around corner"
+					x1 = x2
+					y1 = y2
+					break
 
 		# 2 - find segment that has that distance away on it
 		while dist[0] <= sqrt(3)*rad:
@@ -98,7 +180,7 @@ def find_cand_points(ring, rad):
 				# next take the eucdist from point to cand point 
 				print "poop"
 
-	return pts
+	return candpts
 
 
 
@@ -123,8 +205,9 @@ ax.add_patch(patch)
 buffers = gen_dist_buffers(10.0, targetArea)
 plot_dist_buffers(ax, buffers)
 
-pts_buffer1 = find_cand_points(buffers[1],10.0)
+pts_buffer1 = find_cand_points(buffers[0],10.0)
 print pts_buffer1
+plot_coords_list(ax, pts_buffer1, color="#000000", zorder=3)
 
 # experiment with buffer polys
 #for i in range(0, len(buffers)):
