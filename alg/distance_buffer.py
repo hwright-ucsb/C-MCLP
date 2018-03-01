@@ -112,8 +112,9 @@ def pt_on_bend(l1, optdist, x1, y1, x2, y2, x3, y3):
 # Given the line segment and the circle, determine their intersection, if any
 #	src: stackexchange .. line-segment-to-circle-collision-algorithm
 def pt_seg_circle(optdist, x1, y1, x2, y2, x3, y3):
+	print "ENTERING PT SEG CIRCLE ENTERING PT SEG CIRCLE ENTERING PT SEG CIRCLE ENTERING PT SEG CIRCLE "
 	l1_len = eucdist(x1,y1,x2,y2)
-	l2_len = eucdist(x2,y2,x3,y3)
+	l2_len_all = eucdist(x2,y2,x3,y3)
 
 	# "center" of the virtual circle
 	Q = np.array([x1,y1])
@@ -137,9 +138,21 @@ def pt_seg_circle(optdist, x1, y1, x2, y2, x3, y3):
 	    t2 = (-b - sqrt_disc)/(2*a)
 	    print t1, t2
 	    if (t1>0 and t1<1):
-	        pt = P1 + t1*V
+	        potpt = P1 + t1*V
+	        l2_len = eucdist(x2,y2,pt[0], pt[1])
+	        if l2_len[0] <= l2_len_all[0]:
+	        	pt=potpt
+	        else:
+	        	f=1
+	        	print "pt extends past the end of the segment"
 	    elif (t2>0 and t2<1):
-	        pt = P1 + t2*V
+	        potpt = P1 + t2*V
+	        l2_len = eucdist(x2,y2,pt[0],pt[1])
+	        if l2_len[0] <= l2_len_all[0]:
+	        	pt=potpt
+	        else:
+	        	f=1
+	        	print "pt extends past the end of the segment"
 	    else:
 	    	f = 1
 	        print "no intercept (there would be one if the line segment cont'd)"  
@@ -155,12 +168,12 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 	newcoords = [0.,0.]
 	print str(x1)+" "+str(y1)+" "+str(x2)+" "+str(y2)
 	print (xydist)
-	if xydist[1]<0 or xydist[2]<0:
-		optdist = -optdist
 
 
 	if lineeq[2] == 1: #horizontal
 		print "horizontal"+ str(x1)+ " "+ str(optdist)
+		if xydist[1]<0 or xydist[2]<0:
+			optdist = -optdist
 		newcoords[0] = x1 + optdist
 		if (optdist>0 and newcoords[0] > x2) or (optdist<0 and newcoords[0]<x2):
 			print " SET FLAG around corner x"
@@ -169,6 +182,8 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 			# so find distances from center of potl sites 
 		newcoords[1] = y1
 	elif lineeq[2] == 2: # vertical
+		if xydist[1]<0 or xydist[2]<0:
+			optdist = -optdist
 		print "vertical "+ str(y1)+ " "+ str(optdist)
 		newcoords[1] = y1 + optdist
 		if (optdist>0 and newcoords[1] > y2) or (optdist<0 and newcoords[1] < y2):
@@ -181,7 +196,13 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 		v = np.array([x2,y2]) - np.array([x1,y1])
 		u = v / np.linalg.norm(v)
 		newcoords = np.array([x1,y1]) + optdist*u
-		#if newcoords[0]
+		checkdist = eucdist(x1,y1,newcoords[0],newcoords[1])
+
+		if checkdist[0] > xydist[0]:
+			print "DISTS "+ str(checkdist[0]) + "      "+str(xydist[0])
+			flag = 1
+			print "the new coord was past the end of the line"
+
 
 	return newcoords, flag
 
@@ -202,24 +223,25 @@ def find_cand_points(list_of_poly, rad):
 def find_cand_points_list(coords, rad):
 	candpts = []
 	optdist = sqrt(3)*rad
-	# TODO: fix this naive method of guessing how many cand pts there are on the seg.
 	numcoords=len(coords)
-	cnt = 0
-	x1 = coords[cnt][0]
-	y1 = coords[cnt][1]
-	
+
+	x1 = coords[0][0]
+	y1 = coords[0][1]
+	cnt = 1
+
 	while cnt < numcoords:
-		if cnt+1>=numcoords-1:
+		print " FIRST CNT "+str(cnt)
+		if cnt>numcoords-1:
 			# TODO : make sure this part works 
 			print "closing ring/polygon at cnt = "+str(cnt)
 			x2 = coords[0][0]	#loop back around to the first coord 
 			y2 = coords[0][1]
 			cnt = numcoords
+			break # TODO:  is this necessary??
 		else:
-			cnt+=1
 			x2 = coords[cnt][0]
 			y2 = coords[cnt][1]
-			
+			cnt+=1
 
 		# 1 - find length of current segment
 		dist = eucdist(x1,y1,x2,y2)
@@ -229,12 +251,15 @@ def find_cand_points_list(coords, rad):
 		if dist[0] > optdist:
 			#l = polyfit([x1,y1],[x2,y2],1)
 			#print str(l)
+			# TODO: fix this naive method of guessing how many cand pts there are on the seg.
 			num_cand_sites = int(floor(dist[0]/optdist)) # num of cand sites on this segment
 			print num_cand_sites
 			line = line_eq(x1,y1,x2,y2)
 			print line
 			f = 0 
 			while f == 0:
+				if cnt>numcoords-1: # CHECK
+					break
 				candpt, f  = pt_on_line(line, dist, optdist,x1,y1,x2,y2)
 				if f == 0:
 					x1 = candpt[0]
@@ -242,6 +267,8 @@ def find_cand_points_list(coords, rad):
 					#cnt +=1
 					candpts.append((x1,y1))
 					print str(candpt)
+					print " SEC CNT "+str(cnt)
+					cnt+=1
 					#x1 = newx
 					#y1 = newy
 				else:
@@ -250,23 +277,37 @@ def find_cand_points_list(coords, rad):
 					#newpt = pt_on_bend()
 					#TODO: handle corner calculations
 					print "FLAG bends around corner"
-					#x1 = x2
-					#y1 = y2
+					x1=x2
+					y1=y2
+
+					if cnt >=numcoords:
+						break
+					x2 = coords[cnt][0]
+					y2 = coords[cnt][1]
+
+					print " THIRD CNT "+str(cnt)
+					print "x1 "+str(x1)+" y1 "+str(y1)+" x2 "+str(x2)+" y2 "+str(y2)
+					
+					cnt+=1
+					lastcandpt = candpts[len(candpts)-1]
+					potlpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1], x1,y1,x2,y2)
+					if f == 0:
+						candpts.append((potlpt[0],potlpt[1]))
 					break
 
 		# 2 - find segment that has that distance away on it
 		# TODO : need to take the last candidate pt and get the dist from that
-		if f ==1: # TODO : investigate if it should be 1.5*r everywhere!!!
-			x1=x2
-			y1=y2
-			cnt=+1
-			x2 = coords[cnt][0]
-			y2 = coords[cnt][1]
+		# while f ==1: # TODO : investigate if it should be 1.5*r everywhere!!!
+		# 	x1=x2
+		# 	y1=y2
+		# 	cnt=+1
+		# 	x2 = coords[cnt][0]
+		# 	y2 = coords[cnt][1]
 
-			lastcandpt = candpts[len(candpts)-1]
-			potlpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1], x1,y1,x2,y2)
-			if f == 0:
-				candpts.append((potlpt[0],potlpt[1]))
+		# 	lastcandpt = candpts[len(candpts)-1]
+		# 	potlpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1], x1,y1,x2,y2)
+		# 	if f == 0:
+		# 		candpts.append((potlpt[0],potlpt[1]))
 
 	
 
