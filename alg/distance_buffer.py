@@ -137,17 +137,17 @@ def pt_seg_circle(optdist, x1, y1, x2, y2, x3, y3):
 	    t1 = (-b + sqrt_disc)/(2*a)
 	    t2 = (-b - sqrt_disc)/(2*a)
 	    print t1, t2
-	    if (t1>0 and t1<1):
+	    if (t1>=0 and t1<1):
 	        potpt = P1 + t1*V
-	        l2_len = eucdist(x2,y2,pt[0], pt[1])
+	        l2_len = eucdist(x2,y2,potpt[0], potpt[1])
 	        if l2_len[0] <= l2_len_all[0]:
 	        	pt=potpt
 	        else:
 	        	f=1
 	        	print "pt extends past the end of the segment"
-	    elif (t2>0 and t2<1):
+	    elif (t2>=0 and t2<1):
 	        potpt = P1 + t2*V
-	        l2_len = eucdist(x2,y2,pt[0],pt[1])
+	        l2_len = eucdist(x2,y2,potpt[0],potpt[1])
 	        if l2_len[0] <= l2_len_all[0]:
 	        	pt=potpt
 	        else:
@@ -216,6 +216,71 @@ def find_cand_points(list_of_poly, rad):
 			candpts.append(find_cand_points_list(list(tpoly.interiors[j].coords), rad))
 
 	return candpts
+
+# REFACTORING of find_cand_points_list - try using circles ?
+def find_cand_points_list_ref(coords, rad):
+	candpts = []
+	optdist = sqrt(3)*rad
+	numcoords = len(coords)
+
+	x1 = coords[0][0]
+	y1 = coords[0][1]
+	lastcandpt = [x1,y1]
+	cnt = 1
+
+	while cnt < numcoords:
+		# if we're at the end of the coord list, close the loop 
+		if cnt>numcoords-1:
+			print "closing ring/polygon at cnt = "+str(cnt)
+			x2 = coords[0][0]	#loop back around to the first coord 
+			y2 = coords[0][1]
+			cnt = numcoords
+			break # TODO:  is this necessary??
+		else: # not at the end of the loop, keep looking for cand pts.
+			x2 = coords[cnt][0]
+			y2 = coords[cnt][1]
+
+			# choose the first coord as the first cand pt for now, later
+			# this will be more sophisticated (perhaps randomized)
+			print "LINE EQ: "
+			line = line_eq(x1,y1,x2,y2)
+			f = 0 # what is this flag for again?
+
+			# cant remember if it is undefd. for horizontal or vert lines - check
+			while f==0:
+				if not line[2]==6: #horizontal 2=vertical
+					candpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1],x1,y1,x2,y2)
+					if f==0: #cand pt found
+						candpts.append(candpt)
+						lastcandpt = [candpt[0],candpt[1]]
+						x1 = candpt[0]
+						y1 = candpt[1]
+						# dont change p1 and p2 because they are not changed yet; were still on this line
+					else: #cand pt not found
+						#this can be the case that there is a bend so get the next line
+						cnt+=1
+						if cnt>numcoords-1:
+							break
+						x1 = x2
+						y1 = y2
+						x2 = coords[cnt][0]
+						y2 = coords[cnt][1]
+					
+					#n = len(candpts)-1
+					#x1 = candpts[n][0]
+					#y1 = candpts[n][1]
+
+
+				else:
+					# do the other procedure
+					break # for now
+
+	return candpts
+
+
+
+
+
 
 
 # Takes in a coordinate sequence and finds the cand pts
