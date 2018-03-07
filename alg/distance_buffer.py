@@ -1,4 +1,5 @@
 import sys
+import math
 
 from shapely.geometry import Polygon
 from shapely.geometry import LinearRing
@@ -34,18 +35,19 @@ def plot_radii(ax, pts, rad, color="#999999", zorder=1, alpha=1):
 		ax.add_patch(c)
 
 
-def gen_dist_buffers(rad, area):
-	mult = -1.5
+def gen_dist_buffers(rad, area, capstyle):
+	# TODO : determine if this is the correct multiplier
+	mult = -1.5*rad
 	temp = area
 	buffers = []
-	#i = 1
-	# est max num of buffers
-	# 
-	#print nb 
-	for i in range(1,13):
-		buffers.append(temp)
-		temp = area.buffer(i*(mult*rad))
-		#i=i+1
+	i = 1
+
+	while not temp.area == 0:
+		if not temp.is_empty:
+			buffers.append(temp)
+		temp = area.buffer(i*(mult), capstyle)
+		print temp.area
+		i=i+1
 
 	return buffers
 
@@ -62,6 +64,15 @@ def plot_dist_buffers(ax, buffers):
 		if buf.is_valid:
 			temppatch = PolygonPatch(buf, facecolor='#000000', alpha=(1.0/cnt))
 			ax.add_patch(temppatch)
+
+def gen_initial_candpt(r, pt, deg):
+	# multiplier - depends on the multiplier that is used to generate the dist. buffers
+	mult = 1.5*r
+	a60 = math.radians(deg) # deg = 60 or 120 
+	#a120 = math.radians(120.0)
+	newx = mult*math.cos(a60)+pt[0]
+	newy = mult*math.sin(a60)+pt[1]
+	return [newx,newy]
 
 def eucdist(x1,y1,x2,y2):
 	xdist = x2-x1
@@ -118,7 +129,7 @@ def pt_seg_circle(optdist, x1, y1, x2, y2, x3, y3):
 
 	# "center" of the virtual circle
 	Q = np.array([x1,y1])
-	r = 10.0
+	r = optdist
 	# start of line segment
 	P1 = np.array([x2,y2])
 	# vector along line segment
@@ -231,6 +242,7 @@ def find_cand_points_list_ref(coords, rad):
 	while cnt < numcoords:
 		# if we're at the end of the coord list, close the loop 
 		if cnt>numcoords-1:
+			# TODO: handle case where we need to put an extra cand pt where we're closing the loop
 			print "closing ring/polygon at cnt = "+str(cnt)
 			x2 = coords[0][0]	#loop back around to the first coord 
 			y2 = coords[0][1]
