@@ -1,5 +1,6 @@
 import sys
 import math
+import shapely
 
 from shapely.geometry import Polygon
 from shapely.geometry import LinearRing
@@ -23,9 +24,9 @@ def plot_coords_list(ax, pts, dotsize=0.25, color="#999999", zorder=1, alpha=1):
 	temp = zip(*pts)
 	ax.scatter(temp[0], temp[1], dotsize, color=color, zorder=zorder, alpha=alpha)
 
-def plot_coords(ax, ob, color='#999999', zorder=1, alpha=1):
+def plot_coords(ax, ob, dotsize=0.01, color='#999999', zorder=1, alpha=1):
     x, y = ob.xy
-    ax.plot(x, y, 'o', color=color, zorder=zorder, alpha=alpha)
+    ax.plot(x, y, 'o', ms=dotsize, color=color, zorder=zorder, alpha=alpha)
 
 def plot_radii(ax, pts, rad, color="#999999", zorder=1, alpha=1):
 	circles = []
@@ -33,6 +34,18 @@ def plot_radii(ax, pts, rad, color="#999999", zorder=1, alpha=1):
 		c = Circle(pt, rad, color=color, zorder=zorder, alpha=alpha)
 		circles.append(c)
 		ax.add_patch(c)
+
+def plot_fig(area):
+    fig = pyplot.figure(1, figsize=(20,20), dpi=90)
+    ax = fig.add_subplot(222)
+    ax.axis('equal')
+    interiors = area.interiors
+    if len(interiors) > 0:
+    	plot_coords(ax, area.interiors[0])
+    plot_coords(ax, area.exterior)
+    patch = PolygonPatch(area, facecolor='yellow', edgecolor='#6699cc', alpha=0.1, zorder=2)
+    ax.add_patch(patch)
+    return ax, fig
 
 
 def gen_dist_buffers(rad, area, capstyle):
@@ -68,10 +81,9 @@ def plot_dist_buffers(ax, buffers):
 def gen_initial_candpt(r, pt, deg):
 	# multiplier - depends on the multiplier that is used to generate the dist. buffers
 	mult = 1.5*r
-	a60 = math.radians(deg) # deg = 60 or 120 
-	#a120 = math.radians(120.0)
-	newx = mult*math.cos(a60)+pt[0]
-	newy = mult*math.sin(a60)+pt[1]
+	a = math.radians(deg) # deg = 60 or 120 
+	newx = mult*math.cos(a)+pt[0]
+	newy = mult*math.sin(a)+pt[1]
 	return [newx,newy]
 
 def eucdist(x1,y1,x2,y2):
