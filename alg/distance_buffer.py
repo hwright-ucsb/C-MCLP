@@ -232,36 +232,66 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 
 	return newcoords, flag
 
-
-def ang_bw_vectors(pt1, pt2, pt3, pt4):
-	v1_u = unit_vector(np.array(pt2)-np.array(pt1))
-	v2_u = unit_vector(np.array(pt4)-np.array(pt3))
+# always to - from
+def ang_bw_vectors(from1, to1, from2, to2):
+	v1_u = unit_vector(np.array(to1)-np.array(from1))
+	v2_u = unit_vector(np.array(to2)-np.array(from2))
 	return (np.arccos(np.clip(np.dot(v1_u,v2_u),-1.0, 1.0))) # we do the clipping extra step to handle when the vecs are in the same or opposite directions
 
 
 #find the inflection point of the coord list 
-def find_infl_pt(newcandpt, lastcandpt, eol, coords, ind):
+def find_infl_pt(newcandpt, lastcandpt, coords, ind, r):
 	ptnotfound = True
 	pt = (np.NAN, np.NAN)
 	n = len(coords)-1
-	cnt = ind+2
-	pt1 = lastcandpt
-	pt2 = eol
-	pt3 = coords[cnt-1]
-	flag = False
+	#cnt = ind+2
+	from1 = lastcandpt
+	to1 = newcandpt
+	#from2 = lastcandpt
+	to2 = eol
 
-	while ptnotfound and cnt <=n:
-		deg = np.rad2deg(ang_bw_vectors(pt1, pt2, pt2, pt3))
-		if deg > 30.0: #and deg < 150.0:
-			pt = pt2
-			ptnotfound = False
+	eol = coords[ind]
+	cntt = 0
+	cnt = ind
+	flag = False
+	maxdist = 0.0
+	d1 = [sqrt(3)*r + 1]
+	while d1[0] > (sqrt(3)*r)/2:
+		# try additive dist first
+		d1 = eucdist(lastcandpt[0], lastcandpt[1], eol[0], eol[1])
+		d2 = eucdist(eol[0], eol[0], newcandpt[0], newcandpt[1])
+		print d1
+		print d2
+		d = d1[0]+d2[0]
+		if d > maxdist:
+			pt = eol
+			maxdist = d
 			flag = True
-		#pt1 = pt2
-		pt2 = pt3
-		pt3 = coords[cnt]
-		if cnt+1 > n:
-			ptnotfound = False
+			cntt=cntt+1
+		
 		cnt = cnt+1
+		eol=coords[cnt]
+		print "MAXDIST: "+str(maxdist)+"   "+str(cntt)
+
+
+
+
+
+
+
+ #FIX THIS 
+	# while ptnotfound and cnt <=n:
+	# 	deg = np.rad2deg(ang_bw_vectors(from1, to1, from1, to2))
+	# 	if deg > 30.0: #and deg < 150.0:
+	# 		pt = eol
+	# 		ptnotfound = False
+	# 		flag = True
+	# 	#pt1 = pt2
+	# 	to1 = pt3
+	# 	to2 = coords[cnt]
+	# 	if cnt+1 > n:
+	# 		ptnotfound = False
+	# 	cnt = cnt+1
 	
 	return pt, flag
 
@@ -291,6 +321,7 @@ def find_cand_points_list_ref(coords, rad):
 	x1 = coords[0][0]
 	y1 = coords[0][1]
 	lastcandpt = [x1,y1]
+	lastsegend = [x1,y1]
 	cnt = 1
 
 	while cnt < numcoords:
@@ -318,21 +349,22 @@ def find_cand_points_list_ref(coords, rad):
 					candpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1],x1,y1,x2,y2)
 					if f==0: #cand pt found
 						# NEW 3/12 - check the angle b/w line formed w/ candpts; if above a threshold, there is a sharp curve ahead
+						lastsegcnt = cnt
 						b = len(candpts)-1
-						try:
-							lastcandpt = candpts[b]
-							ang = np.rad2deg(ang_bw_vectors(np.array(candpt), np.array(lastcandpt), np.array(candpt), np.array([x2,y2])))
+						# try:
+						# 	lastcandpt = candpts[b]
+						# 	ang = np.rad2deg(ang_bw_vectors(np.array(lastcandpt), np.array(candpt), np.array(lastcandpt), np.array(coords[lastsegcnt])))
 						
-							if ang > 30.0 :#and ang < 150.0: # angle between two candpt sites and the end of the current line
-								print "THIS IS A PLACE"
-								places.append(lastcandpt)
-								inflpt, iflag = find_infl_pt(candpt, lastcandpt, [x2,y2], coords, cnt)
-								if iflag == True:
-									inflpts.append(inflpt)
-								print str(ang)
-								print str(candpt)+" "+str(lastcandpt)+" "+str(x2)+", "+str(y2)
-						except IndexError:
-							print "INDEXERROR: ANGLE NOT CALCULATED"
+						# 	if ang > 30.0 :#and ang < 150.0: # angle between two candpt sites and the end of the current line
+						# 		print "THIS IS A PLACE"
+						# 		places.append(lastcandpt)
+						# 		inflpt, iflag = find_infl_pt(candpt, lastcandpt, coords, lastsegcnt, rad)
+						# 		if iflag == True:
+						# 			inflpts.append(inflpt)
+						# 		print str(ang)
+						# 		print str(candpt)+" "+str(lastcandpt)+" "+str(x1)+", "+str(y1)
+						# except IndexError:
+						# 	print "INDEXERROR: ANGLE NOT CALCULATED"
 						candpts.append(candpt)
 						lastcandpt = [candpt[0],candpt[1]]
 
