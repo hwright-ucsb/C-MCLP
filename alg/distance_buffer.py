@@ -3,6 +3,7 @@ import math
 import shapely
 
 from shapely.geometry import Polygon
+from shapely.geometry import MultiPolygon
 from shapely.geometry import LinearRing
 from shapely.geometry import LineString
 from shapely.geometry import Point
@@ -19,6 +20,8 @@ from descartes.patch import PolygonPatch
 
 #from shapely.figures import BLUE, SIZE, set_limits, plot_coords, color_isvalid
   
+def unit_vector(vector):
+	return (vector / np.linalg.norm(vector))
 
 def plot_coords_list(ax, pts, dotsize=0.25, color="#999999", zorder=1, alpha=1):
 	temp = zip(*pts)
@@ -64,7 +67,7 @@ def gen_dist_buffers(rad, area, capstyle):
 
 	return buffers
 
-def plot_dist_buffers(ax, buffers):
+def plot_dist_buffers(ax, buffers, alpha=1.00):
 	cnt = len(buffers)
 	print "num of buffers "+str(cnt-1)
 	#print type(buffers)
@@ -75,7 +78,7 @@ def plot_dist_buffers(ax, buffers):
 	for i in range(1, cnt):
 		buf = buffers[i]
 		if buf.is_valid:
-			temppatch = PolygonPatch(buf, facecolor='#000000', alpha=(1.0/cnt))
+			temppatch = PolygonPatch(buf, facecolor='#000000', alpha=(alpha/cnt))
 			ax.add_patch(temppatch)
 
 def gen_initial_candpt(r, pt, deg):
@@ -229,6 +232,42 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 
 	return newcoords, flag
 
+
+def ang_bw_vectors(pt1, pt2, pt3, pt4):
+	v1_u = unit_vector(np.array(pt2)-np.array(pt1))
+	v2_u = unit_vector(np.array(pt4)-np.array(pt3))
+	return (np.arccos(np.clip(np.dot(v1_u,v2_u),-1.0, 1.0))) # we do the clipping extra step to handle when the vecs are in the same or opposite directions
+
+
+#find the inflection point of the coord list 
+def find_infl_pt(newcandpt, lastcandpt, eol, coords, ind):
+	ptnotfound = True
+	pt = (np.NAN, np.NAN)
+	n = len(coords)-1
+	cnt = ind+2
+	pt1 = lastcandpt
+	pt2 = eol
+	pt3 = coords[cnt-1]
+	flag = False
+
+	while ptnotfound and cnt <=n:
+		deg = np.rad2deg(ang_bw_vectors(pt1, pt2, pt2, pt3))
+		if deg > 30.0: #and deg < 150.0:
+			pt = pt2
+			ptnotfound = False
+			flag = True
+		#pt1 = pt2
+		pt2 = pt3
+		pt3 = coords[cnt]
+		if cnt+1 > n:
+			ptnotfound = False
+		cnt = cnt+1
+	
+	return pt, flag
+
+
+
+
 # Take in list of polygons (which have 1 exterior and any # of interiors)
 def find_cand_points(list_of_poly, rad):
 	candpts = []
@@ -240,9 +279,12 @@ def find_cand_points(list_of_poly, rad):
 
 	return candpts
 
+
 # REFACTORING of find_cand_points_list - try using circles ?
 def find_cand_points_list_ref(coords, rad):
+	inflpts = []
 	candpts = []
+	places = []
 	optdist = sqrt(3)*rad
 	numcoords = len(coords)
 
@@ -275,13 +317,30 @@ def find_cand_points_list_ref(coords, rad):
 				if not line[2]==6: #horizontal 2=vertical
 					candpt, f = pt_seg_circle(optdist, lastcandpt[0],lastcandpt[1],x1,y1,x2,y2)
 					if f==0: #cand pt found
+						# NEW 3/12 - check the angle b/w line formed w/ candpts; if above a threshold, there is a sharp curve ahead
+						b = len(candpts)-1
+						try:
+							lastcandpt = candpts[b]
+							ang = np.rad2deg(ang_bw_vectors(np.array(candpt), np.array(lastcandpt), np.array(candpt), np.array([x2,y2])))
+						
+							if ang > 30.0 :#and ang < 150.0: # angle between two candpt sites and the end of the current line
+								print "THIS IS A PLACE"
+								places.append(lastcandpt)
+								inflpt, iflag = find_infl_pt(candpt, lastcandpt, [x2,y2], coords, cnt)
+								if iflag == True:
+									inflpts.append(inflpt)
+								print str(ang)
+								print str(candpt)+" "+str(lastcandpt)+" "+str(x2)+", "+str(y2)
+						except IndexError:
+							print "INDEXERROR: ANGLE NOT CALCULATED"
 						candpts.append(candpt)
 						lastcandpt = [candpt[0],candpt[1]]
+
 						x1 = candpt[0]
 						y1 = candpt[1]
 						# dont change p1 and p2 because they are not changed yet; were still on this line
 					else: #cand pt not found
-						#this can be the case that there is a bend so get the next line
+						# no interception with this line, get the next line
 						cnt+=1
 						if cnt>numcoords-1:
 							break
@@ -299,9 +358,48 @@ def find_cand_points_list_ref(coords, rad):
 					# do the other procedure
 					break # for now
 
-	return candpts
+	return candpts, inflpts, places
 
 
+def find_cand_points_polys(poly, r):
+    candpts = []
+    inflpts = []
+    places = []
+    candpt, inflpt, place = find_cand_points_list_ref(list(poly.exterior.coords),r)
+    candpts.append(candpt)
+    inflpts.append(inflpt)
+    places.append(place)
+    #candpts.append(find_cand_points_list_ref(list(poly.exterior.coords),r))
+    for i in range(0, len(poly.interiors)):
+        candpt, inflpt, place = find_cand_points_list_ref(list(poly.interiors[i].coords),r)
+        inflpts.append(inflpt)
+        candpts.append(candpt)
+        places.append(place)
+        #candpts.append(find_cand_points_list_ref(list(poly.interiors[i].coords),r))
+    
+    return candpts, inflpts, places
+
+def find_cand_points_buffers(buffers, r):
+    candpts = []
+    inflpts = []
+    places = []
+    for i in range(0, len(buffers)):
+        if isinstance(buffers[i], Polygon):
+            print "poly"
+            candpt, inflpt, place = find_cand_points_polys(buffers[i], r)
+            candpts.append(candpt)
+            inflpt.append(inflpt)
+            places.append(place)
+            #candpts.append(find_cand_points_polys(buffers[i], r))
+        elif isinstance(buffers[i], MultiPolygon):
+            print "multi"
+            for j in range(0, len(buffers[i])):
+            	candpt, inflpt, place = find_cand_points_polys(buffers[i].geoms[j], r)
+            	candpts.append(candpt)
+            	inflpts.append(inflpt)
+            	places.append(place)
+                #candpts.append(find_cand_points_polys(buffers[i].geoms[j], r))
+    return candpts, inflpts, places
 
 
 
