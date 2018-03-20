@@ -23,13 +23,21 @@ from descartes.patch import PolygonPatch
 def unit_vector(vector):
 	return (vector / np.linalg.norm(vector))
 
+#plots points with scatter function
 def plot_coords_list(ax, pts, dotsize=0.25, color="#999999", zorder=1, alpha=1):
 	temp = zip(*pts)
 	ax.scatter(temp[0], temp[1], dotsize, color=color, zorder=zorder, alpha=alpha)
 
+#plots  pts....
 def plot_coords(ax, ob, dotsize=0.01, color='#999999', zorder=1, alpha=1):
     x, y = ob.xy
     ax.plot(x, y, 'o', ms=dotsize, color=color, zorder=zorder, alpha=alpha)
+
+#plots lines
+def plot_line(ax, ob, ls='-', color='#999999', zorder=1, alpha=1):
+	x, y = ob.xy
+	ax.plot(x, y, linestyle=ls, color=color, zorder=zorder, alpha=alpha)
+
 
 def plot_radii(ax, pts, rad, color="#999999", zorder=1, alpha=1):
 	circles = []
