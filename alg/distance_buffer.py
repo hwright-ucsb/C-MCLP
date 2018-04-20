@@ -256,7 +256,7 @@ def find_infl_pt(newcandpt, lastcandpt, coords, ind, r):
 	from1 = lastcandpt
 	to1 = newcandpt
 	#from2 = lastcandpt
-	to2 = eol
+	#to2 = eol
 
 	eol = coords[ind]
 	cntt = 0
@@ -359,20 +359,20 @@ def find_cand_points_list_ref(coords, rad):
 						# NEW 3/12 - check the angle b/w line formed w/ candpts; if above a threshold, there is a sharp curve ahead
 						lastsegcnt = cnt
 						b = len(candpts)-1
-						# try:
-						# 	lastcandpt = candpts[b]
-						# 	ang = np.rad2deg(ang_bw_vectors(np.array(lastcandpt), np.array(candpt), np.array(lastcandpt), np.array(coords[lastsegcnt])))
+						try:
+							lastcandpt = candpts[b]
+							ang = np.rad2deg(ang_bw_vectors(np.array(lastcandpt), np.array(candpt), np.array(lastcandpt), np.array(coords[lastsegcnt])))
 						
-						# 	if ang > 30.0 :#and ang < 150.0: # angle between two candpt sites and the end of the current line
-						# 		print "THIS IS A PLACE"
-						# 		places.append(lastcandpt)
-						# 		inflpt, iflag = find_infl_pt(candpt, lastcandpt, coords, lastsegcnt, rad)
-						# 		if iflag == True:
-						# 			inflpts.append(inflpt)
-						# 		print str(ang)
-						# 		print str(candpt)+" "+str(lastcandpt)+" "+str(x1)+", "+str(y1)
-						# except IndexError:
-						# 	print "INDEXERROR: ANGLE NOT CALCULATED"
+							if ang > 30.0 :#and ang < 150.0: # angle between two candpt sites and the end of the current line
+								print "THIS IS A PLACE"
+								places.append(lastcandpt)
+								inflpt, iflag = find_infl_pt(candpt, lastcandpt, coords, lastsegcnt, rad)
+								if iflag == True:
+									inflpts.append(inflpt)
+								print str(ang)
+								print str(candpt)+" "+str(lastcandpt)+" "+str(x1)+", "+str(y1)
+						except IndexError:
+							print "INDEXERROR: ANGLE NOT CALCULATED"
 						candpts.append(candpt)
 						lastcandpt = [candpt[0],candpt[1]]
 
