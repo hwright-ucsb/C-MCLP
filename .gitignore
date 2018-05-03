@@ -1,0 +1,12 @@
+# Ignore...
+
+notes/
+*.pyc
+
+
+# Don't ignore...
+
+!notes/**.pdf
+!notes/**.txt
+!notes/**.doc
+!notes/**.docx

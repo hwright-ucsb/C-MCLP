@@ -91,10 +91,16 @@ def gen_cand_pts_on_line(poly, linevec, startpt, r):
     tempregion = poly
     regiondiff = poly.difference(Point(startpt).buffer(r))
     bordercands = []
-    lastpt = startpt
-    if regiondiff.area < tempregion.area:
-        candpts.append(startpt)
+
+    startpts = []    
+    lastpt = startpt 
+
     optdist = sqrt(3)*r
+    startpt = startpt + optdist*linevec
+    #if regiondiff.area < tempregion.area:
+    #    candpts.append(startpt)
+    #    startpts.append(startpt)
+   
             
     tempregion = regiondiff
     while nummissedpts < 50:
@@ -139,21 +145,23 @@ def gen_cand_pts_on_line(poly, linevec, startpt, r):
             else:
                 nummissedpts+=1
 
-    return candpts, bordercands#, tempregion
+    return candpts, bordercands, startpts#, tempregion
 
 def gen_cand_pts(poly, startvec, startpt, r):
     nummissedlines = 0
     candpts = []
     borderpts = []
+    starts = []
     nextstpt = startpt
     #tempregions = []
     tempregion = poly
     #positive direction loop
     while nummissedlines < 100:
-        temppts, tempbpts = gen_cand_pts_on_line(tempregion, startvec, nextstpt, r)
+        temppts, tempbpts, stpts = gen_cand_pts_on_line(tempregion, startvec, nextstpt, r)
         if len(temppts) > 1:
             candpts.append(temppts)
             borderpts.append(tempbpts)
+            starts.append(stpts)
             #tempregions.append(tempregion)
             nextstpt = gen_next_line_startpt(nextstpt, startvec, r)
             nummissedlines=0
@@ -165,13 +173,14 @@ def gen_cand_pts(poly, startvec, startpt, r):
     #print "MOVE TO NEG DIR LINE LOOP "+ str(len(tempregions))
     nextstpt = gen_next_line_startpt(startpt, startvec, -1*r)
     while nummissedlines < 100:
-        temppts, tempbpts = gen_cand_pts_on_line(tempregion, startvec, nextstpt, r)
+        temppts, tempbpts, stpts = gen_cand_pts_on_line(tempregion, startvec, nextstpt, r)
         if len(temppts) > 1:
             candpts.append(temppts)
             borderpts.append(tempbpts)
+            starts.append(stpts)
             #tempregions.append(tempregion)
             nextstpt = gen_next_line_startpt(nextstpt, startvec, -1*r)
             nummissedlines=0
         else:
             nummissedlines+=1     
-    return candpts, borderpts#, tempregions
+    return candpts, borderpts, stpts#, tempregions
