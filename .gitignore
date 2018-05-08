@@ -2,6 +2,7 @@
 
 notes/
 *.pyc
+data/
 
 
 # Don't ignore...
