@@ -241,7 +241,7 @@ def pt_on_line(lineeq, xydist, optdist, x1, y1, x2, y2):
 	return newcoords, flag
 
 # always to - from
-def ang_bw_vectors(from1, to1, from2, to2):
+def ang_bw_vectors(to1, from1, to2, from2):
 	v1_u = unit_vector(np.array(to1)-np.array(from1))
 	v2_u = unit_vector(np.array(to2)-np.array(from2))
 	return (np.arccos(np.clip(np.dot(v1_u,v2_u),-1.0, 1.0))) # we do the clipping extra step to handle when the vecs are in the same or opposite directions
