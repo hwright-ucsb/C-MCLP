@@ -1,0 +1,83 @@
+
+Gurobi 8.0.0 (mac64, Python) logging started Tue Jun 26 15:18:34 2018
+
+Academic license - for non-commercial use only
+Changed value of parameter PoolSolutions to 100
+   Prev: 10  Min: 1  Max: 2000000000  Default: 10
+Optimize a model with 1 rows, 20 columns and 20 nonzeros
+Variable types: 0 continuous, 20 integer (20 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+01, 1e+01]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 4 objectives (3 combined) ...
+---------------------------------------------------------------------------
+
+Multi-objectives: applying initial presolve ...
+---------------------------------------------------------------------------
+
+Presolve time: 0.02s
+Presolved: 1 rows and 20 columns
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (Set0) ...
+---------------------------------------------------------------------------
+
+Found heuristic solution: objective 10.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.08 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 10 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 2 (weighted) ...
+---------------------------------------------------------------------------
+
+
+Loaded MIP start with objective 6.25
+
+Presolve removed 1 rows and 17 columns
+Presolve time: 0.01s
+Presolved: 1 rows, 3 columns, 3 nonzeros
+Found heuristic solution: objective 10.5000000
+Variable types: 0 continuous, 3 integer (0 binary)
+
+Root relaxation: cutoff, 0 iterations, 0.01 seconds
+
+Explored 0 nodes (0 simplex iterations) in 0.15 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 1: 10.5 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.050000000000e+01, best bound 1.050000000000e+01, gap 0.0000%
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 3 (Set3) ...
+---------------------------------------------------------------------------
+
+
+Loaded MIP start with objective 6
+
+Presolve removed 3 rows and 20 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.19 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 7 6 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 0.20 seconds, solution count 3
+
