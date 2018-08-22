@@ -1,1752 +1,236 @@
-
-Gurobi 8.0.0 (mac64, Python) logging started Tue Jun 26 15:18:34 2018
-
-Academic license - for non-commercial use only
-Changed value of parameter PoolSolutions to 100
-   Prev: 10  Min: 1  Max: 2000000000  Default: 10
-Optimize a model with 1 rows, 20 columns and 20 nonzeros
-Variable types: 0 continuous, 20 integer (20 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [1e+00, 1e+00]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+01, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 4 objectives (3 combined) ...
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.02s
-Presolved: 1 rows and 20 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Set0) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 10.0000000
-
-Explored 0 nodes (0 simplex iterations) in 0.08 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 10 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (weighted) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6.25
-
-Presolve removed 1 rows and 17 columns
-Presolve time: 0.01s
-Presolved: 1 rows, 3 columns, 3 nonzeros
-Found heuristic solution: objective 10.5000000
-Variable types: 0 continuous, 3 integer (0 binary)
-
-Root relaxation: cutoff, 0 iterations, 0.01 seconds
-
-Explored 0 nodes (0 simplex iterations) in 0.15 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 10.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.050000000000e+01, best bound 1.050000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3 (Set3) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6
-
-Presolve removed 3 rows and 20 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.19 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 7 6 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.20 seconds, solution count 3
-
-Optimize a model with 22 rows, 29 columns and 160 nonzeros
-Variable types: 7 continuous, 22 integer (22 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 8e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+00]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 10 rows and 0 columns
-Presolve time: 0.01s
-Presolved: 12 rows and 29 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 0.5000000
-Presolve removed 12 rows and 29 columns
-Presolve time: 0.01s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.38 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 0 0.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.41 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.46 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.49 seconds, solution count 2
-
-Optimize a model with 22 rows, 29 columns and 160 nonzeros
-Variable types: 7 continuous, 22 integer (22 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 8e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 2e+00]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 10 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 12 rows and 29 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 0.5000000
-Presolve removed 9 rows and 25 columns
-Presolve time: 0.00s
-Presolved: 3 rows, 4 columns, 7 nonzeros
-Variable types: 0 continuous, 4 integer (2 binary)
-
-Root relaxation: objective 0.000000e+00, 1 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0       0.0000000    0.00000  0.00%     -    0s
-
-Explored 0 nodes (1 simplex iterations) in 0.13 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 0 0.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.17 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.21 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.24 seconds, solution count 2
-
-Optimize a model with 22 rows, 29 columns and 160 nonzeros
-Variable types: 7 continuous, 22 integer (22 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 8e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 3e+00]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 10 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 12 rows and 29 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 0.5000000
-Presolve removed 12 rows and 29 columns
-Presolve time: 0.01s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.07 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 0 0.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.10 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.12 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.13 seconds, solution count 2
-
-Optimize a model with 22 rows, 29 columns and 160 nonzeros
-Variable types: 7 continuous, 22 integer (22 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 8e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 4e+00]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 12 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 10 rows and 29 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 0.5000000
-Presolve removed 10 rows and 29 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.06 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 0 0.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.08 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.11 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.13 seconds, solution count 2
-
-Optimize a model with 409 rows, 368 columns and 755 nonzeros
-Variable types: 136 continuous, 232 integer (232 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.01s
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds
-Model is infeasible
-
-Optimize a model with 409 rows, 368 columns and 1906 nonzeros
-Variable types: 136 continuous, 232 integer (232 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 6e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 196 rows and 0 columns
-Presolve time: 0.03s
-Presolved: 213 rows and 368 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 15.5000000
-Presolve removed 142 rows and 209 columns
-Presolve time: 0.02s
-Presolved: 71 rows, 159 columns, 538 nonzeros
-Variable types: 0 continuous, 159 integer (150 binary)
-
-Root relaxation: objective 1.100000e+01, 80 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-     0     0   11.00000    0    6   15.50000   11.00000  29.0%     -    0s
-H    0     0                      11.5000000   11.00000  4.35%     -    0s
-H    0     0                      11.0000000   11.00000  0.00%     -    0s
-
-Explored 1 nodes (80 simplex iterations) in 0.39 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 3: 11 11.5 15.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.100000000000e+01, best bound 1.100000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 596
-
-Presolve removed 45 rows and 100 columns
-Presolve time: 0.03s
-Presolved: 169 rows, 268 columns, 1083 nonzeros
-Found heuristic solution: objective 203.3083333
-Variable types: 0 continuous, 268 integer (264 binary)
-
-Root relaxation: objective 1.246417e+02, 177 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0     124.6416667  124.64167  0.00%     -    0s
-
-Explored 0 nodes (177 simplex iterations) in 0.58 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 124.642 203.308 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.246416666667e+02, best bound 1.246416666667e+02, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.62 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.68 seconds, solution count 5
-
-Optimize a model with 409 rows, 368 columns and 3046 nonzeros
-Variable types: 136 continuous, 232 integer (232 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 9e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 192 rows and 0 columns
-Presolve time: 0.01s
-Presolved: 217 rows and 368 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 8.0000000
-Presolve removed 136 rows and 185 columns
-Presolve time: 0.00s
-Presolved: 81 rows, 183 columns, 968 nonzeros
-Variable types: 0 continuous, 183 integer (179 binary)
-
-Root relaxation: objective 4.000000e+00, 110 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0       4.0000000    4.00000  0.00%     -    0s
-
-Explored 0 nodes (110 simplex iterations) in 0.13 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 4 8 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 4.000000000000e+00, best bound 4.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 331
-
-Presolve removed 17 rows and 64 columns
-Presolve time: 0.01s
-Presolved: 201 rows, 304 columns, 1932 nonzeros
-Found heuristic solution: objective 71.1107143
-Variable types: 0 continuous, 304 integer (302 binary)
-
-Root relaxation: objective 3.708036e+01, 243 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0      37.0803571   37.08036  0.00%     -    0s
-
-Explored 0 nodes (243 simplex iterations) in 0.23 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 37.0804 71.1107 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.708035714286e+01, best bound 3.708035714286e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.26 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.27 seconds, solution count 4
-
-Optimize a model with 409 rows, 368 columns and 3027 nonzeros
-Variable types: 136 continuous, 232 integer (232 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 9e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.01s
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.08 seconds
-Model is infeasible
-
-Optimize a model with 409 rows, 368 columns and 3046 nonzeros
-Variable types: 136 continuous, 232 integer (232 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 9e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 192 rows and 0 columns
-Presolve time: 0.02s
-Presolved: 217 rows and 368 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 8.0000000
-Presolve removed 136 rows and 185 columns
-Presolve time: 0.01s
-Presolved: 81 rows, 183 columns, 968 nonzeros
-Variable types: 0 continuous, 183 integer (179 binary)
-
-Root relaxation: objective 4.000000e+00, 110 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0       4.0000000    4.00000  0.00%     -    0s
-
-Explored 0 nodes (110 simplex iterations) in 0.15 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 4 8 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 4.000000000000e+00, best bound 4.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 331
-
-Presolve removed 17 rows and 64 columns
-Presolve time: 0.02s
-Presolved: 201 rows, 304 columns, 1932 nonzeros
-Found heuristic solution: objective 71.1107143
-Variable types: 0 continuous, 304 integer (302 binary)
-
-Root relaxation: objective 3.708036e+01, 243 iterations, 0.01 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0      37.0803571   37.08036  0.00%     -    0s
-
-Explored 0 nodes (243 simplex iterations) in 0.24 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 37.0804 71.1107 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 3.708035714286e+01, best bound 3.708035714286e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.27 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.29 seconds, solution count 4
-
-
-Gurobi 8.0.0 (mac64, Python) logging started Thu Jul 12 12:47:39 2018
-
-Academic license - for non-commercial use only
-Changed value of parameter PoolSolutions to 100
-   Prev: 10  Min: 1  Max: 2000000000  Default: 10
-Optimize a model with 1 rows, 20 columns and 20 nonzeros
-Variable types: 0 continuous, 20 integer (20 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [1e+00, 1e+00]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+01, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 4 objectives (3 combined) ...
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.01s
-Presolved: 1 rows and 20 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Set0) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 10.0000000
-
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 10 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (weighted) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6.25
-
-Presolve removed 1 rows and 17 columns
-Presolve time: 0.00s
-Presolved: 1 rows, 3 columns, 3 nonzeros
-Found heuristic solution: objective 10.5000000
-Variable types: 0 continuous, 3 integer (0 binary)
-
-Root relaxation: cutoff, 0 iterations, 0.00 seconds
-
-Explored 0 nodes (0 simplex iterations) in 0.10 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 10.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.050000000000e+01, best bound 1.050000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3 (Set3) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6
-
-Presolve removed 3 rows and 20 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.13 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 7 6 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.15 seconds, solution count 3
-
-Optimize a model with 22 rows, 29 columns and 160 nonzeros
-Variable types: 7 continuous, 22 integer (22 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 8e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 4e+00]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 12 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 10 rows and 29 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Objective 2) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 0.5000000
-Presolve removed 10 rows and 29 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 0 0.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (Objective 1) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.09 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3  ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 0
-
-
-Explored 0 nodes (0 simplex iterations) in 0.13 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.14 seconds, solution count 2
-
-Optimize a model with 8413 rows, 9066 columns and 18277 nonzeros
-Variable types: 2804 continuous, 6262 integer (6262 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 1e+03]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.00s
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.04 seconds
-Model is infeasible
-
-Optimize a model with 8413 rows, 9066 columns and 18277 nonzeros
-Variable types: 2804 continuous, 6262 integer (6262 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 1e+03]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 8413 rows, 9066 columns and 18277 nonzeros
-Variable types: 2804 continuous, 6262 integer (6262 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 1e+03]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Presolve time: 0.00s
-
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.06 seconds
-Model is infeasible
-
-Optimize a model with 427 rows, 428 columns and 917 nonzeros
-Variable types: 142 continuous, 286 integer (286 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 428 columns and 917 nonzeros
-Variable types: 142 continuous, 286 integer (286 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Presolve time: 0.00s
-
-Explored 0 nodes (0 simplex iterations) in 0.04 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.05 seconds
-Model is infeasible
-
-Optimize a model with 0 rows, 492 columns and 0 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [0e+00, 0e+00]
-  Objective range  [0e+00, 0e+00]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [0e+00, 0e+00]
-Found heuristic solution: objective 0.0000000
-
-Explored 0 nodes (0 simplex iterations) in 0.02 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 0 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Presolve time: 0.00s
-
-Explored 0 nodes (0 simplex iterations) in 0.04 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.05 seconds
-Model is infeasible
-
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 3 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Presolve time: 0.00s
-
-Explored 0 nodes (0 simplex iterations) in 0.04 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.05 seconds
-Model is infeasible
-
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 492 columns and 968 nonzeros
-Variable types: 142 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Presolve time: 0.00s
-
-Explored 0 nodes (0 simplex iterations) in 0.04 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 0
-
-Model is infeasible
-Best objective -, best bound -, gap -
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.05 seconds
-Model is infeasible
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 2052.0000000
-Presolve removed 402 rows and 428 columns
-Presolve time: 0.01s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (60 binary)
-
-Root relaxation: objective 1.290500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1290.5000000 1290.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.08 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1290.5 2052 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.290500000000e+03, best bound 1.290500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds, solution count 2
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 2052.0000000
-Presolve removed 402 rows and 428 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (60 binary)
-
-Root relaxation: objective 1.290500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1290.5000000 1290.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.08 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1290.5 2052 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.290500000000e+03, best bound 1.290500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds, solution count 2
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 202 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 222 rows and 491 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 () ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 79.0000000
-Presolve removed 222 rows and 491 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.08 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 69 79 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 6.900000000000e+01, best bound 6.900000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 () ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 1965
-
-Presolve removed 185 rows and 386 columns
-Presolve time: 0.00s
-Presolved: 38 rows, 105 columns, 230 nonzeros
-Found heuristic solution: objective 1292.0000000
-Variable types: 0 continuous, 105 integer (87 binary)
-
-Root relaxation: objective 1.221500e+03, 30 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1221.5000000 1221.50000  0.00%     -    0s
-
-Explored 0 nodes (30 simplex iterations) in 0.13 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 3: 1221.5 1292 1770.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.221500000000e+03, best bound 1.221500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.15 seconds, solution count 5
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 202 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 222 rows and 491 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 () ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 79.0000000
-Presolve removed 222 rows and 491 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.07 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 69 79 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 6.900000000000e+01, best bound 6.900000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 () ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 1965
-
-Presolve removed 185 rows and 386 columns
-Presolve time: 0.00s
-Presolved: 38 rows, 105 columns, 230 nonzeros
-Found heuristic solution: objective 1292.0000000
-Variable types: 0 continuous, 105 integer (87 binary)
-
-Root relaxation: objective 1.221500e+03, 30 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1221.5000000 1221.50000  0.00%     -    0s
-
-Explored 0 nodes (30 simplex iterations) in 0.12 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 3: 1221.5 1292 1770.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.221500000000e+03, best bound 1.221500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.13 seconds, solution count 5
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 202 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 222 rows and 491 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 () ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 79.0000000
-Presolve removed 222 rows and 491 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.07 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 69 79 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 6.900000000000e+01, best bound 6.900000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 () ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 19650
-
-Presolve removed 185 rows and 386 columns
-Presolve time: 0.00s
-Presolved: 38 rows, 105 columns, 230 nonzeros
-Found heuristic solution: objective 12920.000000
-Variable types: 0 continuous, 105 integer (87 binary)
-
-Root relaxation: objective 1.221500e+04, 30 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    12215.000000 12215.0000  0.00%     -    0s
-
-Explored 0 nodes (30 simplex iterations) in 0.13 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 3: 12215 12920 17705 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.221500000000e+04, best bound 1.221500000000e+04, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.14 seconds, solution count 5
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives ... 
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve removed 202 rows and 0 columns
-Presolve time: 0.00s
-Presolved: 222 rows and 491 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 () ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 1973.0000000
-Presolve removed 200 rows and 428 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (60 binary)
-
-Root relaxation: objective 1.221500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1221.5000000 1221.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.08 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1221.5 1973 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.221500000000e+03, best bound 1.221500000000e+03, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 () ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 86
-
-Presolve removed 199 rows and 404 columns
-Presolve time: 0.00s
-Presolved: 24 rows, 87 columns, 211 nonzeros
-Found heuristic solution: objective 69.0000000
-Variable types: 0 continuous, 87 integer (74 binary)
-
-Root relaxation: cutoff, 0 iterations, 0.00 seconds
-
-Explored 0 nodes (0 simplex iterations) in 0.12 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 69 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 6.900000000000e+01, best bound 6.900000000000e+01, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.13 seconds, solution count 3
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 2052.0000000
-Presolve removed 402 rows and 428 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (60 binary)
-
-Root relaxation: objective 1.290500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1290.5000000 1290.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.07 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1290.5 2052 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.290500000000e+03, best bound 1.290500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds, solution count 2
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 424 rows, 491 columns and 967 nonzeros
-Variable types: 141 continuous, 350 integer (350 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 2052.0000000
-Presolve removed 402 rows and 428 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (60 binary)
-
-Root relaxation: objective 1.290500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1290.5000000 1290.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.07 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1290.5 2052 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.290500000000e+03, best bound 1.290500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds, solution count 2
-
-Optimize a model with 427 rows, 518 columns and 985 nonzeros
-Variable types: 142 continuous, 376 integer (376 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 518 columns and 985 nonzeros
-Variable types: 142 continuous, 376 integer (376 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 1926.0000000
-Presolve removed 405 rows and 455 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 63 columns, 105 nonzeros
-Variable types: 0 continuous, 63 integer (61 binary)
-
-Root relaxation: objective 1.193500e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1193.5000000 1193.50000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.07 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1193.5 1926 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.193500000000e+03, best bound 1.193500000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.08 seconds, solution count 2
-
-Optimize a model with 427 rows, 518 columns and 985 nonzeros
-Variable types: 142 continuous, 376 integer (376 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 427 rows, 518 columns and 985 nonzeros
-Variable types: 142 continuous, 376 integer (376 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 3e+01]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 2107.5000000
-Presolve removed 405 rows and 453 columns
-Presolve time: 0.00s
-Presolved: 22 rows, 65 columns, 107 nonzeros
-Variable types: 0 continuous, 65 integer (64 binary)
-
-Root relaxation: objective 1.289000e+03, 16 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    1289.0000000 1289.00000  0.00%     -    0s
-
-Explored 0 nodes (16 simplex iterations) in 0.07 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 2: 1289 2107.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.289000000000e+03, best bound 1.289000000000e+03, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.09 seconds, solution count 2
-
-
-Gurobi 8.0.0 (mac64, Python) logging started Wed Jul 25 23:04:30 2018
-
-Academic license - for non-commercial use only
-Changed value of parameter PoolSolutions to 100
-   Prev: 10  Min: 1  Max: 2000000000  Default: 10
-Optimize a model with 1 rows, 20 columns and 20 nonzeros
-Variable types: 0 continuous, 20 integer (20 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 1e+00]
-  Objective range  [1e+00, 1e+00]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+01, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 4 objectives (3 combined) ...
----------------------------------------------------------------------------
-
-Multi-objectives: applying initial presolve ...
----------------------------------------------------------------------------
-
-Presolve time: 0.01s
-Presolved: 1 rows and 20 columns
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (Set0) ...
----------------------------------------------------------------------------
-
-Found heuristic solution: objective 10.0000000
-
-Explored 0 nodes (0 simplex iterations) in 0.05 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 1: 10 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 2 (weighted) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6.25
-
-Presolve removed 1 rows and 17 columns
-Presolve time: 0.00s
-Presolved: 1 rows, 3 columns, 3 nonzeros
-Found heuristic solution: objective 10.5000000
-Variable types: 0 continuous, 3 integer (0 binary)
-
-Root relaxation: cutoff, 0 iterations, 0.00 seconds
-
-Explored 0 nodes (0 simplex iterations) in 0.09 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 1: 10.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 1.050000000000e+01, best bound 1.050000000000e+01, gap 0.0000%
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 3 (Set3) ...
----------------------------------------------------------------------------
-
-
-Loaded MIP start with objective 6
-
-Presolve removed 3 rows and 20 columns
-Presolve time: 0.00s
-Presolve: All rows and columns removed
-
-Explored 0 nodes (0 simplex iterations) in 0.11 seconds
-Thread count was 1 (of 8 available processors)
-
-Solution count 2: 7 6 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 7.000000000000e+00, best bound 7.000000000000e+00, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.12 seconds, solution count 3
-
-Optimize a model with 8341 rows, 32876 columns and 30607 nonzeros
-Variable types: 2780 continuous, 30096 integer (30096 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 6e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-
----------------------------------------------------------------------------
-Multi-objectives: starting optimization with 2 objectives (1 combined) ...
----------------------------------------------------------------------------
----------------------------------------------------------------------------
-
-Multi-objectives: optimize objective 1 (weighted) ...
----------------------------------------------------------------------------
-
-Optimize a model with 8341 rows, 32876 columns and 30607 nonzeros
-Variable types: 2780 continuous, 30096 integer (30096 binary)
-Coefficient statistics:
-  Matrix range     [1e+00, 2e+00]
-  Objective range  [1e+00, 6e+02]
-  Bounds range     [1e+00, 1e+00]
-  RHS range        [1e+00, 1e+01]
-Found heuristic solution: objective 60047.500000
-Presolve removed 7801 rows and 31610 columns
-Presolve time: 0.09s
-Presolved: 540 rows, 1266 columns, 2206 nonzeros
-Found heuristic solution: objective 54811.500000
-Variable types: 0 continuous, 1266 integer (1192 binary)
-
-Root relaxation: objective 5.478100e+04, 539 iterations, 0.00 seconds
-
-    Nodes    |    Current Node    |     Objective Bounds      |     Work
- Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
-
-*    0     0               0    54781.000000 54781.0000  0.00%     -    0s
-
-Explored 0 nodes (539 simplex iterations) in 0.19 seconds
-Thread count was 8 (of 8 available processors)
-
-Solution count 3: 54781 54811.5 54965.5 
-
-Optimal solution found (tolerance 1.00e-04)
-Best objective 5.478100000000e+04, best bound 5.478100000000e+04, gap 0.0000%
-
----------------------------------------------------------------------------
-Multi-objectives: solved in 0.22 seconds, solution count 3
-
+Parameter OutputFlag unchanged
+   Value: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
+Changed value of parameter LogToConsole to 0
+   Prev: 1  Min: 0  Max: 1  Default: 1
