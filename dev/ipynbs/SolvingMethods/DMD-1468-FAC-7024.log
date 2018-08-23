@@ -1,0 +1,66 @@
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 00:56:18 2018
+
+Changed value of parameter LogFile to DMD-1468-FAC-7024.log
+   Prev: gurobi.log  Default: 
+Changed value of parameter MIPGap to 0.004
+   Prev: 0.0001  Min: 0.0  Max: 1e+100  Default: 0.0001
+Optimize a model with 4405 rows, 15516 columns and 96279 nonzeros
+Variable types: 1468 continuous, 14048 integer (14048 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 2 objectives (1 combined) ...
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (weighted) ...
+---------------------------------------------------------------------------
+
+Optimize a model with 4405 rows, 15516 columns and 96279 nonzeros
+Variable types: 1468 continuous, 14048 integer (14048 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 1e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 318.5482233
+Presolve removed 2771 rows and 12796 columns
+Presolve time: 0.24s
+Presolved: 1634 rows, 2720 columns, 21244 nonzeros
+Variable types: 228 continuous, 2492 integer (2491 binary)
+
+Root relaxation: objective 6.702926e+01, 2076 iterations, 0.04 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      67.0292592   67.02926  0.00%     -    0s
+
+Explored 0 nodes (2076 simplex iterations) in 0.30 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 67.0293 318.548 
+
+Optimal solution found (tolerance 4.00e-03)
+Best objective 6.702925922015e+01, best bound 6.702925922015e+01, gap 0.0000%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 0.30 seconds, solution count 2
+
+Parameter ObjNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Parameter SolutionNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter ObjNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 0
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0

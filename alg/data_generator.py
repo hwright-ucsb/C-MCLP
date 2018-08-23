@@ -226,10 +226,10 @@ def gen_triangular_gridpts(bds, rad):
 	cur_y = west
 	for i in range(0,x_ints):
 		xs_all.append(cur_x)
-		cur_x = i*x_shift
+		cur_x = cur_x+x_shift
 	for i in range(0,y_ints):
 		ys_all.append(cur_y)
-		cur_y = i* y_shift
+		cur_y = cur_y+y_shift
 
 
 	# now take odds with odds and evens with evens ("2" grids)
@@ -263,8 +263,11 @@ def gen_triangular_gridpts(bds, rad):
 	data2={'x':x_grid2.flatten(), 'y':y_grid2.flatten()}
 	data_all = data1.copy()   # start with x's keys and values
 	data_all.update(data2)
-	grid1gdf = gpd.GeoDataFrame(data={'x':x_grid1.flatten(), 'y':y_grid1.flatten()})
-	grid2gdf = gpd.GeoDataFrame(data={'x':x_grid2.flatten(), 'y':y_grid2.flatten()})
+	#grid1gdf = gpd.GeoDataFrame(data={'y':x_grid1.flatten(), 'x':y_grid1.flatten()})
+	#grid2gdf = gpd.GeoDataFrame(data={'y':x_grid2.flatten(), 'x':y_grid2.flatten()})
+	grid1gdf = gpd.GeoDataFrame(data={ 'x':y_grid1.flatten(), 'y':x_grid1.flatten()})
+	grid2gdf = gpd.GeoDataFrame(data={'x':y_grid2.flatten(), 'y':x_grid2.flatten()})
+
 	gridgdf = gpd.GeoDataFrame( pd.concat( [grid1gdf,grid2gdf], ignore_index=True) )
 	# transform the grid pts for indexing
 	gridgdf['geometry'] = gridgdf.apply(lambda row: Point((row['x'], row['y'])), axis=1)

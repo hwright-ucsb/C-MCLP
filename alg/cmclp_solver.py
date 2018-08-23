@@ -57,7 +57,7 @@ def generate_set_N(demandSites, potlFacilitySites, S, tol):
 
 	return N
 
-def cmclp_solve(facsites, dmdpts, dmdwts, N, P, S, objparams):
+def cmclp_solve(facsites, dmdpts, dmdwts, N, P, S, objparams, relgaptol=0.0004):
 	output = {}
 
 	#Problem Data
@@ -73,6 +73,9 @@ def cmclp_solve(facsites, dmdpts, dmdwts, N, P, S, objparams):
 	#m.setParam(GRB.Param.OutputFlag, 1)
 	m.setParam(GRB.Param.LogToConsole, 0)
 	m.setParam(GRB.Param.LogFile, filestr)
+	
+	#SET GAP TOLERANCE
+	m.setParam(GRB.Param.MIPGap, relgaptol)
 
 	# X : POTL FACILITY SITES
 	x = m.addVars(range(numPotlFacilitySites), vtype=GRB.BINARY, name="x")
@@ -167,8 +170,9 @@ def cmclp_solve(facsites, dmdpts, dmdwts, N, P, S, objparams):
 
 	return siteschosen, output
 
+
 def cmclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, disttol=0.0, objparams={"index": [0,1], "priority":[0,0], "weight":[1.,1.],
-                      "abstol":[0.,0.], "reltol":[0.,0.]}):
+                      "abstol":[0.,0.], "reltol":[0.,0.]}, relgaptol=0.0004):
 	# TODO: find out  - how do we get the chosen sites from the nonopt solns?
 	#       (i.e. X # solns found...) - also, do we care? (why would we?)
 
@@ -193,10 +197,11 @@ def cmclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, 
 	tol = disttol
 
 	while (repeatdemandptcnt < stop):
-	    
+	    print len(curdemandpts)
+	    print len(curpotlsites)
 	    cur_N = generate_set_N(curdemandpts, curpotlsites, S, tol)
 
-	    cursoln, curstatus = cmclp_solve(curpotlsites, curdemandpts, curdemandwts, cur_N, P, S, objectiveparams)
+	    cursoln, curstatus = cmclp_solve(curpotlsites, curdemandpts, curdemandwts, cur_N, P, S, objectiveparams, relgaptol)
 	    
 	    #return the ACTUAL covered demand pts and the ACTUAL covered pop
 	    curcoveredpts, coveringsites, curcoveredpop = actual_coverage(cursoln, cur_N, curdemandwts)

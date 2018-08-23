@@ -1,0 +1,92 @@
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 00:56:03 2018
+
+Changed value of parameter LogFile to DMD-3043-FAC-7024.log
+   Prev: gurobi.log  Default: 
+Changed value of parameter MIPGap to 0.004
+   Prev: 0.0001  Min: 0.0  Max: 1e+100  Default: 0.0001
+Optimize a model with 9130 rows, 17091 columns and 195252 nonzeros
+Variable types: 3043 continuous, 14048 integer (14048 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 2 objectives (1 combined) ...
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (weighted) ...
+---------------------------------------------------------------------------
+
+Optimize a model with 9130 rows, 17091 columns and 195252 nonzeros
+Variable types: 3043 continuous, 14048 integer (14048 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 5e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 619.0140581
+Presolve removed 5179 rows and 10822 columns
+Presolve time: 0.79s
+Presolved: 3951 rows, 6269 columns, 66977 nonzeros
+Variable types: 264 continuous, 6005 integer (6004 binary)
+
+Root relaxation: objective 2.423660e+02, 6422 iterations, 0.25 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  242.36603    0  526  619.01406  242.36603  60.8%     -    1s
+H    0     0                     260.8784451  242.36603  7.10%     -    1s
+H    0     0                     250.4594007  242.36603  3.23%     -    1s
+H    0     0                     243.6585096  242.36603  0.53%     -    1s
+H    0     0                     243.6585095  242.37650  0.53%     -    1s
+H    0     0                     242.5482254  242.37650  0.07%     -    1s
+     0     0  242.40527    0  174  242.54823  242.40527  0.06%     -    1s
+
+Cutting planes:
+  Gomory: 1
+  Zero half: 9
+
+Explored 1 nodes (6650 simplex iterations) in 1.39 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 242.548 243.659 243.659 ... 619.014
+
+Optimal solution found (tolerance 4.00e-03)
+Best objective 2.425482254464e+02, best bound 2.424052656649e+02, gap 0.0589%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 1.40 seconds, solution count 6
+
+Parameter ObjNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Parameter SolutionNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 2
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 3
+   Prev: 2  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 4
+   Prev: 3  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 5
+   Prev: 4  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter ObjNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 0
+   Prev: 5  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 2
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 3
+   Prev: 2  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 4
+   Prev: 3  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 5
+   Prev: 4  Min: 0  Max: 2000000000  Default: 0
