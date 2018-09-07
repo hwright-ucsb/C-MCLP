@@ -1,0 +1,76 @@
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 13:54:25 2018
+
+Changed value of parameter LogFile to MCLP-DMD-324-FAC-6624.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 325 rows, 6948 columns and 11952 nonzeros
+Variable types: 0 continuous, 6948 integer (6948 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 3e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 332.0000000
+Presolve removed 245 rows and 6769 columns
+Presolve time: 0.01s
+Presolved: 80 rows, 179 columns, 354 nonzeros
+Variable types: 0 continuous, 179 integer (173 binary)
+
+Root relaxation: objective 3.450000e+01, 31 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   34.50000    0   12  332.00000   34.50000  89.6%     -    0s
+H    0     0                      52.0000000   34.50000  33.7%     -    0s
+H    0     0                      36.0000000   34.50000  4.17%     -    0s
+     0     0     cutoff    0        36.00000   36.00000  0.00%     -    0s
+
+Cutting planes:
+  Zero half: 3
+
+Explored 1 nodes (36 simplex iterations) in 0.03 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 36 52 332 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.600000000000e+01, best bound 3.600000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 14:19:06 2018
+
+Changed value of parameter LogFile to MCLP-DMD-324-FAC-6624.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 325 rows, 6948 columns and 11952 nonzeros
+Variable types: 0 continuous, 6948 integer (6948 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 3e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 332.0000000
+Presolve removed 245 rows and 6769 columns
+Presolve time: 0.01s
+Presolved: 80 rows, 179 columns, 354 nonzeros
+Variable types: 0 continuous, 179 integer (173 binary)
+
+Root relaxation: objective 3.450000e+01, 31 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   34.50000    0   12  332.00000   34.50000  89.6%     -    0s
+H    0     0                      52.0000000   34.50000  33.7%     -    0s
+H    0     0                      36.0000000   34.50000  4.17%     -    0s
+     0     0     cutoff    0        36.00000   36.00000  0.00%     -    0s
+
+Cutting planes:
+  Zero half: 3
+
+Explored 1 nodes (36 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 36 52 332 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.600000000000e+01, best bound 3.600000000000e+01, gap 0.0000%

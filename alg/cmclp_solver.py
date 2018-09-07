@@ -3,22 +3,24 @@
 from gurobipy import *
 
 import shapely
-import math
-import pyproj
-import sys
-import fiona
-sys.path.append('../../../alg')
-
-import matplotlib.pyplot as plt, pandas as pd, geopandas as gpd, numpy as np
-import distance_buffer as db, border_generators as bg, marching_army as ma
-
-from matplotlib import pyplot
-from functools import partial
 from shapely import geometry
 from shapely.ops import transform
 from descartes import PolygonPatch
 from matplotlib.patches import Arc
 from shapely.geometry import Point, Polygon, MultiPolygon, LineString
+import sys
+sys.path.append('../../../alg')
+import distance_buffer as db, border_generators as bg, marching_army as ma
+
+
+import math
+import pyproj
+import fiona
+
+import matplotlib.pyplot as plt, pandas as pd, geopandas as gpd, numpy as np
+
+from matplotlib import pyplot
+from functools import partial
 from scipy.stats import truncnorm
 
 def todict(keys, vals):
@@ -197,8 +199,8 @@ def cmclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, 
 	tol = disttol
 
 	while (repeatdemandptcnt < stop):
-	    print len(curdemandpts)
-	    print len(curpotlsites)
+	    #print len(curdemandpts)
+	    #print len(curpotlsites)
 	    cur_N = generate_set_N(curdemandpts, curpotlsites, S, tol)
 
 	    cursoln, curstatus = cmclp_solve(curpotlsites, curdemandpts, curdemandwts, cur_N, P, S, objectiveparams, relgaptol)

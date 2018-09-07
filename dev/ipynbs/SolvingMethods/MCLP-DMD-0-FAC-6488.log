@@ -1,0 +1,84 @@
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 13:54:25 2018
+
+Changed value of parameter LogFile to MCLP-DMD-0-FAC-6488.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1 rows, 6488 columns and 6488 nonzeros
+Variable types: 0 continuous, 6488 integer (6488 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+02, 1e+02]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 13:54:25 2018
+
+Changed value of parameter LogFile to MCLP-DMD-0-FAC-6488.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1 rows, 6488 columns and 6488 nonzeros
+Variable types: 0 continuous, 6488 integer (6488 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+02, 1e+02]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 14:19:07 2018
+
+Changed value of parameter LogFile to MCLP-DMD-0-FAC-6488.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1 rows, 6488 columns and 6488 nonzeros
+Variable types: 0 continuous, 6488 integer (6488 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+02, 1e+02]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 14:19:07 2018
+
+Changed value of parameter LogFile to MCLP-DMD-0-FAC-6488.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1 rows, 6488 columns and 6488 nonzeros
+Variable types: 0 continuous, 6488 integer (6488 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [0e+00, 0e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+02, 1e+02]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%

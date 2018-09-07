@@ -1,0 +1,118 @@
+
+Gurobi 8.0.0 (mac64) logging started Thu Aug 23 13:45:27 2018
+
+Changed value of parameter LogFile to DMD-4964-FAC-6924.log
+   Prev: gurobi.log  Default: 
+Changed value of parameter MIPGap to 0.004
+   Prev: 0.0001  Min: 0.0  Max: 1e+100  Default: 0.0001
+Optimize a model with 14893 rows, 18812 columns and 324895 nonzeros
+Variable types: 4964 continuous, 13848 integer (13848 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 2 objectives (1 combined) ...
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (weighted) ...
+---------------------------------------------------------------------------
+
+Optimize a model with 14893 rows, 18812 columns and 324895 nonzeros
+Variable types: 4964 continuous, 13848 integer (13848 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+02]
+Found heuristic solution: objective 1417.4619212
+Presolve removed 7552 rows and 7249 columns
+Presolve time: 1.55s
+Presolved: 7341 rows, 11563 columns, 162100 nonzeros
+Variable types: 242 continuous, 11321 integer (11320 binary)
+
+Root relaxation: objective 5.035243e+02, 12335 iterations, 0.91 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  503.52428    0 1337 1417.46192  503.52428  64.5%     -    2s
+H    0     0                     551.2673767  503.52428  8.66%     -    2s
+H    0     0                     510.5307536  503.52428  1.37%     -    3s
+     0     0  504.50166    0 1403  510.53075  504.50166  1.18%     -    4s
+     0     0  504.98103    0 1351  510.53075  504.98103  1.09%     -    4s
+     0     0  504.98840    0 1277  510.53075  504.98840  1.09%     -    4s
+H    0     0                     509.1945775  504.98840  0.83%     -    4s
+H    0     0                     509.0444774  504.98840  0.80%     -    4s
+     0     0  505.28192    0 1166  509.04448  505.28192  0.74%     -    5s
+H    0     0                     507.9077894  505.28192  0.52%     -    5s
+     0     0  505.39228    0 1286  507.90779  505.39228  0.50%     -    5s
+     0     0  505.41515    0 1286  507.90779  505.41515  0.49%     -    5s
+     0     0  505.42845    0 1316  507.90779  505.42845  0.49%     -    5s
+     0     0  505.43144    0 1322  507.90779  505.43144  0.49%     -    5s
+     0     0  505.43149    0 1323  507.90779  505.43149  0.49%     -    5s
+     0     0  505.73101    0 1098  507.90779  505.73101  0.43%     -    6s
+     0     0  505.73875    0  674  507.90779  505.73875  0.43%     -    6s
+     0     0  505.74410    0 1254  507.90779  505.74410  0.43%     -    6s
+     0     0  505.74450    0 1255  507.90779  505.74450  0.43%     -    6s
+     0     0  505.74460    0 1263  507.90779  505.74460  0.43%     -    6s
+     0     0  505.79534    0 1302  507.90779  505.79534  0.42%     -    7s
+     0     0  505.79534    0 1264  507.90779  505.79534  0.42%     -    8s
+H    0     0                     506.8913115  505.79534  0.22%     -    9s
+     0     0  505.79534    0 1159  506.89131  505.79534  0.22%     -    9s
+
+Cutting planes:
+  Gomory: 3
+  MIR: 27
+  Zero half: 20
+
+Explored 1 nodes (26560 simplex iterations) in 9.49 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 8: 506.891 507.908 507.908 ... 1417.46
+
+Optimal solution found (tolerance 4.00e-03)
+Best objective 5.068913115383e+02, best bound 5.057953434752e+02, gap 0.2162%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 9.51 seconds, solution count 8
+
+Parameter ObjNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Parameter SolutionNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 2
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 3
+   Prev: 2  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 4
+   Prev: 3  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 5
+   Prev: 4  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 6
+   Prev: 5  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 7
+   Prev: 6  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter ObjNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 0
+   Prev: 7  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 2
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 3
+   Prev: 2  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 4
+   Prev: 3  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 5
+   Prev: 4  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 6
+   Prev: 5  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 7
+   Prev: 6  Min: 0  Max: 2000000000  Default: 0
