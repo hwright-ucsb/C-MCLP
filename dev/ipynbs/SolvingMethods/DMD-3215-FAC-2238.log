@@ -1,0 +1,132 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:57:31 2018
+
+Changed value of parameter LogFile to DMD-3215-FAC-2238.log
+   Prev: gurobi.log  Default: 
+Changed value of parameter MIPGap to 0.0
+   Prev: 0.0001  Min: 0.0  Max: 1e+100  Default: 0.0001
+Optimize a model with 9646 rows, 7691 columns and 19630 nonzeros
+Variable types: 3215 continuous, 4476 integer (4476 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 2 objectives (1 combined) ...
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (weighted) ...
+---------------------------------------------------------------------------
+
+Optimize a model with 9646 rows, 7691 columns and 19630 nonzeros
+Variable types: 3215 continuous, 4476 integer (4476 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 8276.5000000
+Presolve removed 9383 rows and 7124 columns
+Presolve time: 0.02s
+Presolved: 263 rows, 567 columns, 1091 nonzeros
+Variable types: 0 continuous, 567 integer (554 binary)
+
+Root relaxation: objective 4.422000e+03, 214 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    4422.0000000 4422.00000  0.00%     -    0s
+
+Explored 0 nodes (214 simplex iterations) in 0.03 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 4422 8276.5 
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 4.422000000000e+03, best bound 4.422000000000e+03, gap 0.0000%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 0.03 seconds, solution count 2
+
+Parameter ObjNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Parameter SolutionNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter ObjNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 0
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 05:38:48 2018
+
+Changed value of parameter LogFile to DMD-3215-FAC-2238.log
+   Prev: gurobi.log  Default: 
+Changed value of parameter MIPGap to 0.0
+   Prev: 0.0001  Min: 0.0  Max: 1e+100  Default: 0.0001
+Optimize a model with 9646 rows, 7691 columns and 19636 nonzeros
+Variable types: 3215 continuous, 4476 integer (4476 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+
+---------------------------------------------------------------------------
+Multi-objectives: starting optimization with 2 objectives (1 combined) ...
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Multi-objectives: optimize objective 1 (weighted) ...
+---------------------------------------------------------------------------
+
+Optimize a model with 9646 rows, 7691 columns and 19636 nonzeros
+Variable types: 3215 continuous, 4476 integer (4476 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 8344.5000000
+Presolve removed 9377 rows and 7112 columns
+Presolve time: 0.02s
+Presolved: 269 rows, 579 columns, 1115 nonzeros
+Variable types: 0 continuous, 579 integer (571 binary)
+
+Root relaxation: objective 4.456000e+03, 215 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    4456.0000000 4456.00000  0.00%     -    0s
+
+Explored 0 nodes (215 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 4456 8344.5 
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective 4.456000000000e+03, best bound 4.456000000000e+03, gap 0.0000%
+
+---------------------------------------------------------------------------
+Multi-objectives: solved in 0.02 seconds, solution count 2
+
+Parameter ObjNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Parameter SolutionNumber unchanged
+   Value: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter ObjNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 0
+   Prev: 1  Min: 0  Max: 2000000000  Default: 0
+Changed value of parameter SolutionNumber to 1
+   Prev: 0  Min: 0  Max: 2000000000  Default: 0

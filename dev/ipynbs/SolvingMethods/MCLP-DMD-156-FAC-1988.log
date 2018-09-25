@@ -1,0 +1,72 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:29:07 2018
+
+Changed value of parameter LogFile to MCLP-DMD-156-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 157 rows, 2144 columns and 2305 nonzeros
+Variable types: 0 continuous, 2144 integer (2144 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 157.0000000
+Presolve removed 157 rows and 2144 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 157 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:33:37 2018
+
+Changed value of parameter LogFile to MCLP-DMD-156-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 157 rows, 2144 columns and 2305 nonzeros
+Variable types: 0 continuous, 2144 integer (2144 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 3e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 161.0000000
+Presolve removed 157 rows and 2144 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 161 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:35:26 2018
+
+Changed value of parameter LogFile to MCLP-DMD-156-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 157 rows, 2144 columns and 2305 nonzeros
+Variable types: 0 continuous, 2144 integer (2144 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 157.0000000
+Presolve removed 157 rows and 2144 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 157 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%

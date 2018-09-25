@@ -1,0 +1,64 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:57:59 2018
+
+Changed value of parameter LogFile to MCLP-DMD-1930-FAC-2138.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1931 rows, 4068 columns and 6219 nonzeros
+Variable types: 0 continuous, 4068 integer (4068 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 2224.0000000
+Presolve removed 1787 rows and 3753 columns
+Presolve time: 0.01s
+Presolved: 144 rows, 315 columns, 600 nonzeros
+Variable types: 0 continuous, 315 integer (303 binary)
+
+Root relaxation: objective 1.198000e+03, 91 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    1198.0000000 1198.00000  0.00%     -    0s
+
+Explored 0 nodes (91 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1198 2224 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.198000000000e+03, best bound 1.198000000000e+03, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:17:23 2018
+
+Changed value of parameter LogFile to MCLP-DMD-1930-FAC-2138.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 1931 rows, 4068 columns and 6220 nonzeros
+Variable types: 0 continuous, 4068 integer (4068 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+01]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 2238.0000000
+Presolve removed 1783 rows and 3745 columns
+Presolve time: 0.01s
+Presolved: 148 rows, 323 columns, 616 nonzeros
+Variable types: 0 continuous, 323 integer (306 binary)
+
+Root relaxation: objective 1.223000e+03, 95 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    1223.0000000 1223.00000  0.00%     -    0s
+
+Explored 0 nodes (95 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 1223 2238 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.223000000000e+03, best bound 1.223000000000e+03, gap 0.0000%

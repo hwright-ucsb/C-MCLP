@@ -1,0 +1,192 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:15:25 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 5e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 159.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 159 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:25:30 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 3e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 157.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 157 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:47:04 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 154.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 154 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:02:35 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 158.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 158 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:03:29 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 3e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 156.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 156 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:19:18 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 161.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 161 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:24:01 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 4e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 156.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 156 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:33:21 2018
+
+Changed value of parameter LogFile to MCLP-DMD-151-FAC-1988.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 152 rows, 2139 columns and 2295 nonzeros
+Variable types: 0 continuous, 2139 integer (2139 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 154.0000000
+Presolve removed 152 rows and 2139 columns
+Presolve time: 0.00s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 8 available processors)
+
+Solution count 2: 10 154 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.000000000000e+01, best bound 1.000000000000e+01, gap 0.0000%

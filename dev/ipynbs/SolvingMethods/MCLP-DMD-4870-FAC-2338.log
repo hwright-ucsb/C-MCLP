@@ -1,0 +1,103 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:41:12 2018
+
+Changed value of parameter LogFile to MCLP-DMD-4870-FAC-2338.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 4871 rows, 7208 columns and 12901 nonzeros
+Variable types: 0 continuous, 7208 integer (7208 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 22808.000000
+Presolve removed 4381 rows and 6291 columns
+Presolve time: 0.01s
+Presolved: 490 rows, 917 columns, 1895 nonzeros
+Variable types: 0 continuous, 917 integer (913 binary)
+
+Root relaxation: objective 1.413200e+04, 412 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 14132.0000    0   12 22808.0000 14132.0000  38.0%     -    0s
+H    0     0                    14225.000000 14132.0000  0.65%     -    0s
+H    0     0                    14134.000000 14132.0000  0.01%     -    0s
+     0     0 infeasible    0      14134.0000 14134.0000  0.00%     -    0s
+     0     0 infeasible    0      14134.0000 14134.0000  0.00%     -    0s
+
+Cutting planes:
+  Clique: 1
+
+Explored 1 nodes (412 simplex iterations) in 0.03 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 3: 14134 14225 22808 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.413400000000e+04, best bound 1.413400000000e+04, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:49:26 2018
+
+Changed value of parameter LogFile to MCLP-DMD-4870-FAC-2338.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 4871 rows, 7208 columns and 12912 nonzeros
+Variable types: 0 continuous, 7208 integer (7208 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 23289.000000
+Presolve removed 4378 rows and 6287 columns
+Presolve time: 0.01s
+Presolved: 493 rows, 921 columns, 1905 nonzeros
+Variable types: 0 continuous, 921 integer (919 binary)
+
+Root relaxation: objective 1.470000e+04, 427 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    14700.000000 14700.0000  0.00%     -    0s
+
+Explored 0 nodes (427 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 14700 23289 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.470000000000e+04, best bound 1.470000000000e+04, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:57:38 2018
+
+Changed value of parameter LogFile to MCLP-DMD-4870-FAC-2338.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 4871 rows, 7208 columns and 12917 nonzeros
+Variable types: 0 continuous, 7208 integer (7208 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 2e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 22871.000000
+Presolve removed 4373 rows and 6282 columns
+Presolve time: 0.01s
+Presolved: 498 rows, 926 columns, 1920 nonzeros
+Variable types: 0 continuous, 926 integer (922 binary)
+
+Root relaxation: objective 1.400400e+04, 421 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    14004.000000 14004.0000  0.00%     -    0s
+
+Explored 0 nodes (421 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 14004 22871 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.400400000000e+04, best bound 1.400400000000e+04, gap 0.0000%

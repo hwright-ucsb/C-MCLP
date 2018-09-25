@@ -1,0 +1,96 @@
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:18:47 2018
+
+Changed value of parameter LogFile to MCLP-DMD-3973-FAC-2288.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 3974 rows, 6261 columns and 10832 nonzeros
+Variable types: 0 continuous, 6261 integer (6261 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 14512.000000
+Presolve removed 3617 rows and 5538 columns
+Presolve time: 0.01s
+Presolved: 357 rows, 723 columns, 1435 nonzeros
+Variable types: 0 continuous, 723 integer (714 binary)
+
+Root relaxation: objective 8.494000e+03, 300 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    8494.0000000 8494.00000  0.00%     -    0s
+
+Explored 0 nodes (300 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 8494 14512 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.494000000000e+03, best bound 8.494000000000e+03, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 03:19:43 2018
+
+Changed value of parameter LogFile to MCLP-DMD-3973-FAC-2288.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 3974 rows, 6261 columns and 10828 nonzeros
+Variable types: 0 continuous, 6261 integer (6261 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 14357.000000
+Presolve removed 3612 rows and 5531 columns
+Presolve time: 0.01s
+Presolved: 362 rows, 730 columns, 1452 nonzeros
+Variable types: 0 continuous, 730 integer (721 binary)
+
+Root relaxation: objective 8.388000e+03, 306 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    8388.0000000 8388.00000  0.00%     -    0s
+
+Explored 0 nodes (306 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 8388 14357 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.388000000000e+03, best bound 8.388000000000e+03, gap 0.0000%
+
+Gurobi 8.0.0 (mac64) logging started Mon Sep 24 04:20:58 2018
+
+Changed value of parameter LogFile to MCLP-DMD-3973-FAC-2288.log
+   Prev: gurobi.log  Default: 
+Optimize a model with 3974 rows, 6261 columns and 10833 nonzeros
+Variable types: 0 continuous, 6261 integer (6261 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 5e+01]
+Found heuristic solution: objective 14043.000000
+Presolve removed 3605 rows and 5528 columns
+Presolve time: 0.01s
+Presolved: 369 rows, 733 columns, 1469 nonzeros
+Variable types: 0 continuous, 733 integer (722 binary)
+
+Root relaxation: objective 8.109000e+03, 296 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    8109.0000000 8109.00000  0.00%     -    0s
+
+Explored 0 nodes (296 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 8109 14043 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.109000000000e+03, best bound 8.109000000000e+03, gap 0.0000%
