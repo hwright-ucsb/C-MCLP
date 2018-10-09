@@ -23,10 +23,20 @@ from matplotlib import pyplot
 from functools import partial
 from scipy.stats import truncnorm
 
+def flatten_list_of_lists(l):
+    return [item for sublist in l for item in sublist]
+
 def todict(keys, vals):
     return dict(zip(keys,vals))
 
-def clean_stage_solns(stagesoln, facilitypt_coords):
+def clean_stage_solns(stagesoln):
+	trimmedoutput = []
+	for solndict in difoutput:
+	    if solndict['coveredpop'] >0:
+	        trimmedoutput.append(solndict)
+	return trimmedoutput
+
+def clean_stage_solns_old(stagesoln, facilitypt_coords):
     site_coords = []
     for stage in stagesoln:
         if stage['coveredpop'] >0:
@@ -172,7 +182,6 @@ def cmclp_solve(facsites, dmdpts, dmdwts, N, P, S, objparams, relgaptol=0.0004):
 
 	return siteschosen, output
 
-
 def cmclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, disttol=0.0, objparams={"index": [0,1], "priority":[0,0], "weight":[1.,1.],
                       "abstol":[0.,0.], "reltol":[0.,0.]}, relgaptol=0.0004):
 	# TODO: find out  - how do we get the chosen sites from the nonopt solns?
@@ -234,6 +243,75 @@ def cmclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, 
 
 	return stagesolns
     
+def cmclp_stages_elim(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, disttol=0.0, objparams={"index": [0,1], "priority":[0,0], "weight":[1.,1.],
+                      "abstol":[0.,0.], "reltol":[0.,0.]}, relgaptol=0.0004):
+    # TODO: find out  - how do we get the chosen sites from the nonopt solns?
+    #       (i.e. X # solns found...) - also, do we care? (why would we?)
+
+    curdemandpts = demandpts
+    curdemandwts = demandwts
+    curpotlsites = facilitypts
+    curnumdemandpts = len(curdemandpts)
+    pt_wt_dict = todict(curdemandpts, curdemandwts)
+
+    P = stageP
+    S = stageS
+    objectiveparams = objparams
+
+    # {"sites":, "coveredpts":, "coveredpop":, "output":, "coverror":}
+    stagesolns = []
+
+    # TESTING PURPOSES
+    #k = 0
+    #cnt # times we've had the same # demand pts; stop after STOP
+    repeatdemandptcnt = 0
+    stop = stopcond
+    tol = disttol
+
+    while (repeatdemandptcnt < stop):
+       # print "dmd "+str(len(curdemandpts))
+       # print "sites "+str(len(curpotlsites))
+        cur_N = generate_set_N(curdemandpts, curpotlsites, S, tol)
+
+        cursoln, curstatus = cmclp_solve(curpotlsites, curdemandpts, curdemandwts, cur_N, P, S, objectiveparams, relgaptol)
+        #return the ACTUAL covered demand pts and the ACTUAL covered pop
+        curcoveredpts, coveringsites, curcoveredpop = actual_coverage(cursoln, cur_N, curdemandwts)
+        #these are the demand pts NOT covered by the soln
+
+        coverage_error = list(set(cursoln.keys())-set(curcoveredpts))
+
+        # we will use the the ACTUALLY covered pts, get those coords
+        tmp_demandpts = []
+        for ind in curcoveredpts:
+            tmp_demandpts.append(curdemandpts[ind])
+
+        nextdemandpts = list(set(curdemandpts)-set(tmp_demandpts))
+
+        nextdemandwts = []
+        for pt in nextdemandpts:
+            nextdemandwts.append(pt_wt_dict[pt])
+
+       # print "covering sites "+str(len(coveringsites))
+        # eliminate used up facility sites
+        nextpotlpts = []
+        for i in range(0,len(curpotlsites)):
+            if i not in coveringsites:
+                nextpotlpts.append(curpotlsites[i])
+       # print "nextsites "+str(len(nextpotlpts))
+
+        stagesolns.append({"sites":cursoln, "coveredpts":curcoveredpts, "coveringsites": coveringsites,
+                           "coveredpop":curcoveredpop, "output":curstatus, "coverror":coverage_error})
+
+        if len(curdemandpts) == len(nextdemandpts):
+            repeatdemandptcnt += 1
+        else:
+            repeatdemandptcnt = 0
+
+        curdemandwts = nextdemandwts
+        curdemandpts = nextdemandpts
+        curpotlsites = nextpotlpts
+
+    return stagesolns
 
 def actual_coverage(chosen_sites, N, wts):
     #map coverage to a dict for easy accessing 
@@ -254,15 +332,26 @@ def actual_coverage(chosen_sites, N, wts):
 
     covered_pts = []
     covering_sites = []
-    for i in range(0,len(chosen_sites)):
-    	if chosen_sites[i] in tmpdict:
-	        tmp_cov = tmpdict[chosen_sites[i]]
-	        covering_sites.append(chosen_sites[i])
+    chosen_site_keys = chosen_sites.keys()
+
+    for i in range(0,len(chosen_site_keys)):
+    	if chosen_site_keys[i] in tmpdict:
+	        tmp_cov = tmpdict[chosen_site_keys[i]] #this will be the coords not index
+	        covering_sites.append(chosen_site_keys[i]) #this will be the coords not index
 
 	        for j in range(0,len(tmp_cov)):
 	            if tmp_cov[j] not in covered_pts:
 	                covered_pts.append(tmp_cov[j])
 
+    '''for i in range(0,len(chosen_sites)):
+    	if chosen_sites[i] in tmpdict:
+	        tmp_cov = tmpdict[chosen_sites[i]] #this will be the coords not index
+	        covering_sites.append(chosen_sites[i]) #this will be the coords not index
+
+	        for j in range(0,len(tmp_cov)):
+	            if tmp_cov[j] not in covered_pts:
+	                covered_pts.append(tmp_cov[j])
+	                '''
     cov_pop = 0
     cov_wts = []
     for i in range(0,len(covered_pts)):
@@ -312,7 +401,7 @@ def mclp_solve(tmp_facilitypts, tmp_demandpts, tmp_wts, N, P, S):
 
 
     #%tb
-    siteschosen_mclp = []
+    siteschosen_mclp = {}
     try:
         m.optimize()
         m.setParam(GRB.Param.OutputFlag, 0)
@@ -337,7 +426,7 @@ def mclp_solve(tmp_facilitypts, tmp_demandpts, tmp_wts, N, P, S):
         # Print best selected set
         for j in range(numPotlFacilitySites):
             if x[j].X > 0.9:
-                siteschosen_mclp.append(j)
+                siteschosen_mclp[j] = potlFacilitySites[j]
 
 
         # Print number of solutions stored
@@ -414,5 +503,68 @@ def mclp_stages(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, d
 
         curdemandwts = nextdemandwts
         curdemandpts = nextdemandpts
+
+    return stagesolns
+
+
+def mclp_stages_elim(demandpts, demandwts, facilitypts, stageP, stageS, stopcond=2, disttol=0.0):
+    curdemandpts = demandpts
+    curdemandwts = demandwts
+    curpotlsites = facilitypts
+    curnumdemandpts = len(curdemandpts)
+    pt_wt_dict = todict(curdemandpts, curdemandwts)
+
+    P = stageP
+    S = stageS
+
+    # {"sites":, "coveredpts":, "coveredpop":, "output":, "coverror":}
+    stagesolns = []
+
+    #cnt # times we've had the same # demand pts; stop after STOP
+    repeatdemandptcnt = 0
+    stop = stopcond
+    tol = disttol
+
+    while (repeatdemandptcnt < stop):
+    
+        cur_N = generate_set_N(curdemandpts, curpotlsites, S, tol)
+        cursoln, curstatus = mclp_solve(curpotlsites, curdemandpts, curdemandwts, cur_N, P, S)
+
+        #return the ACTUAL covered demand pts and the ACTUAL covered pop
+        curcoveredpts, coveringsites, curcoveredpop = actual_coverage(cursoln, cur_N, curdemandwts)
+        #these are the demand pts NOT covered by the soln
+        coverage_error = list(set(cursoln.keys())-set(curcoveredpts))
+
+        # we will use the the ACTUALLY covered pts, get those coords
+        tmp_demandpts = []
+        for ind in curcoveredpts:
+            tmp_demandpts.append(curdemandpts[ind])        
+
+        nextdemandpts = list(set(curdemandpts)-set(tmp_demandpts))
+        # print "num covered pts "+str(len(curcoveredpts))
+        # print "num covered coords "+str(len(tmp_demandpts))
+        # print "num next dmd pts "+str(len(nextdemandpts))
+
+
+        nextdemandwts = []
+        for pt in nextdemandpts:
+            nextdemandwts.append(pt_wt_dict[pt])
+            
+        nextpotlpts = []
+        for i in range(0,len(curpotlsites)):
+            if i not in coveringsites:
+                nextpotlpts.append(curpotlsites[i])
+
+        stagesolns.append({"sites":cursoln, "coveredpts":curcoveredpts, "coveringsites": coveringsites,
+                           "coveredpop":curcoveredpop, "output":curstatus, "coverror":coverage_error})
+
+        if len(curdemandpts) == len(nextdemandpts):
+            repeatdemandptcnt += 1
+        else:
+            repeatdemandptcnt = 0
+
+        curdemandwts = nextdemandwts
+        curdemandpts = nextdemandpts
+        curpotlsites = nextpotlpts 
 
     return stagesolns
